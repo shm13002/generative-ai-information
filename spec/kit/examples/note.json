@@ -1,0 +1,16 @@
+{
+  "id": "card-note",
+  "utterance": "example note",
+  "status": "ready",
+  "screen": {
+    "title": "Note",
+    "blocks": [
+      {
+        "id": "no1",
+        "type": "note",
+        "label": "Heads up",
+        "text": "No call with Northwind in 41 days."
+      }
+    ]
+  }
+}

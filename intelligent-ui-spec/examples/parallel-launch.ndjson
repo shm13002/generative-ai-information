@@ -1,0 +1,4 @@
+{"t":"card","id":"c9","title":"Launch: 100 issues","status":"needs-you","mode":"full"}
+{"t":"block","id":"tp1","type":"taskplan","props":{"goal":"Launch tomorrow: 100 open issues","concurrency":8,"deadline":"Wed Oct 14, 9:00 AM","jobs":[{"id":"j1","title":"Product Hunt listing","app":"Product Hunt","effects":["write"]},{"id":"j2","title":"Close launch bugs","app":"Linear","count":12,"effects":["write"]},{"id":"j3","title":"Slack announcements","app":"Slack","count":6,"effects":["post"],"needsApproval":true},{"id":"j8","title":"Investor emails","app":"Gmail","count":34,"effects":["draft","send"],"needsApproval":true}],"summary":"8 jobs cover 100 issues. 3 jobs post or send; you'll approve each before it goes out."}}
+{"t":"block","id":"ap1","type":"approval","props":{"action":"jobs.start","title":"Start 8 jobs?","detail":"Reads and drafts start now. Posting and sending wait for you.","risk":"low","choices":["allow-once","edit","deny"],"state":"pending"}}
+{"t":"end"}

@@ -1,0 +1,28 @@
+{
+  "id": "card-progress",
+  "utterance": "example progress",
+  "status": "ready",
+  "screen": {
+    "title": "Progress",
+    "blocks": [
+      {
+        "id": "pr1",
+        "type": "progress",
+        "steps": [
+          {
+            "text": "Reading the contract",
+            "state": "done"
+          },
+          {
+            "text": "Checking discount cap",
+            "state": "active"
+          },
+          {
+            "text": "Drafting the reply",
+            "state": "pending"
+          }
+        ]
+      }
+    ]
+  }
+}

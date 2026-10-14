@@ -1,0 +1,40 @@
+{
+  "_note": "Ordered; first match wins; case-insensitive word-boundary regex. Observed in shipping kit (CONFIRMED).",
+  "rules": [
+    [
+      "todo",
+      "\\b(waiting|owe|needs? me|to-?do|inbox|follow.?up)\\b"
+    ],
+    [
+      "email",
+      "\\b(draft|write|reply|email|message)\\b"
+    ],
+    [
+      "brief",
+      "\\b(prep|brief)\\b"
+    ],
+    [
+      "person",
+      "\\b(who is|who's|whos)\\b"
+    ],
+    [
+      "number",
+      "\\b(how much|how many|mrr|arr|revenue|churn|growth|conversion)\\b"
+    ],
+    [
+      "list",
+      "\\b(list|which|overdue|invoices|deals|tickets|issues|compare)\\b"
+    ],
+    [
+      "agenda",
+      "\\b(today|my day|schedule|calendar|agenda|meeting|week|move|friday|monday|tuesday|wednesday|thursday|tomorrow|book)\\b"
+    ]
+  ],
+  "fallback": "answer",
+  "shapes": {
+    "number": "1 line 30% + 36px block 44% + 1 line 100%",
+    "todo|agenda|list": "4 rows: 32px circle + 2 lines (70%,45%)",
+    "email": "6 lines (40,55,100,92,96,30%)",
+    "answer": "3 lines (96,88,62%)"
+  }
+}

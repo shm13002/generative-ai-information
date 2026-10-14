@@ -1,0 +1,31 @@
+{
+  "id": "card-brief",
+  "utterance": "example brief",
+  "status": "ready",
+  "screen": {
+    "title": "Brief",
+    "blocks": [
+      {
+        "id": "b1",
+        "type": "brief",
+        "title": "Northwind renewal",
+        "bullets": [
+          "$36,000 a year, renews Oct 30",
+          "Asked for 10% on a two-year term",
+          "Champion Dana Park left in September"
+        ],
+        "people": [
+          {
+            "name": "Tomás Rivera",
+            "role": "CFO",
+            "note": "New decision maker"
+          }
+        ],
+        "sources": [
+          "Gmail",
+          "HubSpot"
+        ]
+      }
+    ]
+  }
+}

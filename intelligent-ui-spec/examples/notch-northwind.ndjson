@@ -1,0 +1,12 @@
+{"t":"card","id":"c5","title":"Northwind","status":"needs-you","mode":"card","surface":"notch","priority":"needs-you","say":"Sam, Northwind might not renew."}
+{"t":"block","id":"b1","type":"alert","props":{"title":"Northwind may not renew","detail":"Renews in 9 days · their champion left","status":"needs-you","source":"CRM","actions":[{"kind":"send","label":"What happened?","text":"What happened with Northwind?"}]}}
+{"t":"end"}
+{"t":"card","id":"c6","title":"Northwind","status":"ready","mode":"card","surface":"notch","say":"Their champion left. And the new CFO wants it cheaper."}
+{"t":"block","id":"b2","type":"answer","props":{"text":"Renews Oct 22 · 2-year contract up · At risk"}}
+{"t":"block","id":"b3","type":"list","props":{"rows":[["Dana Park, your champion, left"],["New CFO: “We're reviewing cheaper options”"],["No call with Northwind in 41 days"]]}}
+{"t":"block","id":"b4","type":"buttons","props":{"items":[{"kind":"send","label":"Get time with Tomás","text":"Get me time with Tomás Rivera"},{"kind":"send","label":"Draft an offer","text":"Draft a renewal offer for Northwind"}]}}
+{"t":"status","status":"ready"}
+{"t":"end"}
+{"t":"card","id":"c7","title":"Sent","status":"ready","mode":"card","surface":"notch","say":"Sent. You're on for Thursday at ten."}
+{"t":"block","id":"b5","type":"receipt","props":{"text":"Sent to Tomás · Thursday 10:00 held","ok":true,"undoToken":"u_9c1"}}
+{"t":"end"}

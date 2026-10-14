@@ -1,0 +1,9 @@
+{"t":"card","id":"c2","title":"Bill splitter","status":"working"}
+{"t":"state","vars":{"bill":186,"tip":18,"people":4}}
+{"t":"block","id":"b1","type":"control","props":{"var":"bill","label":"Bill","kind":"number","unit":"$"}}
+{"t":"block","id":"b2","type":"control","props":{"var":"tip","label":"Tip","kind":"segmented","options":[{"label":"15%","value":15},{"label":"18%","value":18},{"label":"20%","value":20}]}}
+{"t":"block","id":"b3","type":"control","props":{"var":"people","label":"People","kind":"stepper","min":1,"max":20,"step":1}}
+{"t":"block","id":"b4","type":"result","props":{"label":"Each pays","value":{"$calc":"round(bill * (1 + tip / 100) / people, 2)","format":"currency"},"size":"l"}}
+{"t":"block","id":"b5","type":"buttons","props":{"items":[{"kind":"copy","label":"Copy amount","text":"Each person owes {result:b4}"}]}}
+{"t":"status","status":"ready"}
+{"t":"end"}

@@ -1,0 +1,14 @@
+{"ev":"job","job":"r42","seq":1,"state":"planning","question":"Which EU e-bike brands grew fastest in 2025–26?"}
+{"ev":"plan","job":"r42","seq":2,"steps":[{"id":"p1","title":"List top 15 EU e-bike brands"},{"id":"p2","title":"Collect 2025 and 2026 revenue or unit sales"},{"id":"p3","title":"Check funding and press for growth signals"},{"id":"p4","title":"Rank and explain"}],"autoStartIn":60}
+{"ev":"job","job":"r42","seq":3,"state":"running"}
+{"ev":"step","job":"r42","seq":4,"id":"p1","state":"active"}
+{"ev":"search","job":"r42","seq":5,"worker":"w1","query":"largest European e-bike brands 2026 market share","results":10}
+{"ev":"source","job":"r42","seq":6,"id":"s1","url":"https://example.org/eu-ebike-market-2026","title":"European e-bike market report 2026","site":"example.org","state":"found","relevance":0.92}
+{"ev":"source","job":"r42","seq":7,"id":"s1","state":"read"}
+{"ev":"data","job":"r42","seq":8,"table":"ev1","row":{"brand":"Cowboy","country":"BE","units":42000,"growth":0.4},"cite":["s1"]}
+{"ev":"finding","job":"r42","seq":9,"id":"f1","claim":"Cowboy's 2025 unit sales grew about 40% year on year","cites":["s1"],"confidence":"medium","status":"new"}
+{"ev":"progress","job":"r42","seq":10,"stage":"reading","progress":0.42,"spentUsd":0.31}
+{"ev":"checkpoint","job":"r42","seq":11,"step":"p1","state":"s3://jobs/r42/ckpt-0011.json"}
+{"ev":"job","job":"r42","seq":12,"state":"writing"}
+{"ev":"report","job":"r42","seq":13,"line":{"t":"block","id":"o1","type":"outline","props":{"sections":[{"id":"r1","title":"Summary","state":"writing"},{"id":"r2","title":"Growth leaders","state":"pending"}]}}}
+{"ev":"job","job":"r42","seq":14,"state":"done"}

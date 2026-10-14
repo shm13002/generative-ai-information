@@ -1,0 +1,35 @@
+{
+  "id": "card-todo-needsyou",
+  "utterance": "what needs me?",
+  "status": "ready",
+  "screen": {
+    "title": "Needs you",
+    "blocks": [
+      {
+        "id": "ny",
+        "type": "todo",
+        "label": "Needs you",
+        "total": 3,
+        "items": [
+          {
+            "id": "a",
+            "title": "Marco wants to move your 4 PM",
+            "detail": "Slack \u00b7 2h",
+            "action": "Reply"
+          },
+          {
+            "id": "b",
+            "title": "Priya's offer is ready to sign",
+            "detail": "DocuSign",
+            "action": "Open"
+          },
+          {
+            "id": "c",
+            "title": "Review Jen's launch post",
+            "detail": "Notion \u00b7 1d"
+          }
+        ]
+      }
+    ]
+  }
+}

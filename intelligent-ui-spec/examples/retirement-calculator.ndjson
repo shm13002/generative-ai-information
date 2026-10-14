@@ -1,0 +1,9 @@
+{"t":"card","id":"c3","title":"Retirement calculator","status":"working"}
+{"t":"state","vars":{"age":35,"retire":65,"saved":20000,"monthly":800,"rate":6}}
+{"t":"block","id":"b1","type":"control","props":{"var":"monthly","label":"Monthly saving","kind":"slider","min":0,"max":5000,"step":50,"unit":"$"}}
+{"t":"block","id":"b2","type":"control","props":{"var":"rate","label":"Yearly return","kind":"slider","min":0,"max":12,"step":0.5,"unit":"%"}}
+{"t":"block","id":"b3","type":"result","props":{"label":"At 65 you'd have","value":{"$calc":"saved * pow(1 + rate/100, retire - age) + monthly * 12 * (pow(1 + rate/100, retire - age) - 1) / max(rate/100, 0.0001)","format":"currency"},"size":"l"}}
+{"t":"block","id":"b4","type":"chart","props":{"kind":"area","x":{"key":"x","label":"Age","type":"number"},"series":[{"key":"bal","label":"Balance","color":"accent"}],"data":{"$calcSeries":{"x":"x","from":"age","to":"retire","step":1,"y":{"bal":"saved * pow(1 + rate/100, x - age) + monthly * 12 * (pow(1 + rate/100, x - age) - 1) / max(rate/100, 0.0001)"}}},"yFormat":"currency"}}
+{"t":"block","id":"b5","type":"note","props":{"kind":"info","text":"Illustration only: returns are not guaranteed and inflation is ignored."}}
+{"t":"status","status":"ready"}
+{"t":"end"}

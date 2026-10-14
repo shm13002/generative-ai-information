@@ -1,0 +1,39 @@
+{
+  "id": "card-todo",
+  "utterance": "example todo",
+  "status": "ready",
+  "screen": {
+    "title": "Todo",
+    "blocks": [
+      {
+        "id": "t1",
+        "type": "todo",
+        "label": "Needs you",
+        "total": 3,
+        "items": [
+          {
+            "id": "i1",
+            "text": "Marco wants to move your 4 PM",
+            "who": "Marco",
+            "age": "2h",
+            "source": "Slack",
+            "replyable": true
+          },
+          {
+            "id": "i2",
+            "text": "Priya's offer is ready to sign",
+            "who": "Priya",
+            "source": "DocuSign"
+          },
+          {
+            "id": "i3",
+            "text": "Review Jen's launch post",
+            "who": "Jen",
+            "age": "1d",
+            "source": "Notion"
+          }
+        ]
+      }
+    ]
+  }
+}

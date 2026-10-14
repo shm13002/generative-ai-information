@@ -1,0 +1,34 @@
+{
+  "_source": "Values observed in the Agently for Mac v0.1.38 overlay (island.css, motion.js, kit.js, island.js, notch.js, island-frame.js). Re-typed as plain values; no source code copied.",
+  "color": {
+    "bg": "#0e0e11", "panel": "rgba(14,14,17,0.92)", "raised": "#121215", "surface": "#141418", "surface3": "#222229", "notch": "#000000",
+    "text": "#f5f4f1", "text2": "#d0cec9", "text3": "#8d8b86", "text4": "#62605c",
+    "inverse": "#f7f5f1", "onInverse": "#111111",
+    "fill": "rgba(255,255,255,0.05)", "fill2": "rgba(255,255,255,0.09)", "fill3": "rgba(255,255,255,0.14)", "line": "rgba(255,255,255,0.07)",
+    "ok": "#8fbf9f", "fail": "#d8886a"
+  },
+  "font": {
+    "sans": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', Inter, 'Segoe UI', sans-serif",
+    "display": "-apple-system, BlinkMacSystemFont, 'SF Pro Display', Inter, sans-serif",
+    "mono": "ui-monospace, 'SF Mono', 'Geist Mono', Menlo, monospace",
+    "sizes": [11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5], "weights": [500, 590, 600], "titleTracking": "-0.2px"
+  },
+  "size": {
+    "button": {"height": 32, "radius": 16, "padX": 16, "font": 13},
+    "mini": {"height": 26, "radius": 13, "padX": 11},
+    "tag": {"height": 22, "radius": 11, "padX": 9, "font": 11.5},
+    "icon": {"size": 26, "radius": 13}, "avatar": 32, "badge": {"size": 18, "radius": 9},
+    "cardHeader": {"gap": 10, "marginBottom": 14, "minHeight": 26}, "panelPad": "0 18px 18px",
+    "skeleton": {"line": 10, "lineRadius": 5, "bigHeight": 36, "bigWidth": "44%", "rowIcon": 32},
+    "gaps": [2, 4, 6, 8, 10, 12]
+  },
+  "island": {"window": [640, 600], "orb": 18, "wing": 36, "barWidth": 400, "openWidth": 440, "margin": 16, "captionLine": 20, "captionChars": 400, "titleChars": 60, "guessedNotchWidth": 185, "notchedMenuBarMin": 30, "drawnNotchWidth": 96, "drawnNotchHeight": [24, 32]},
+  "motion": {
+    "arrive": {"stiffness": 120, "damping": 17, "ms": 700}, "morph": {"stiffness": 210, "damping": 26, "ms": 560},
+    "revealMs": 300, "staggerMs": 60, "tapMs": 150, "phraseMs": 150, "phraseFadeMs": 260, "countMs": 750, "rowDrawMs": 110,
+    "ruleDrawMs": 380, "growMs": 520, "ghostOutMs": 160, "panelContentFadeMs": 240, "panelContentDelayMs": 90,
+    "islandResizeMs": 220, "hoverInMs": 160, "hoverOutMs": 320, "spinnerS": 0.9, "dotsPulseS": 1.4, "meterBarMs": 90,
+    "easing": {"ease": "cubic-bezier(.4,0,.2,1)", "out": "cubic-bezier(.2,.7,.2,1)", "in": "cubic-bezier(.5,0,.75,0)"}
+  },
+  "lifecycle": {"readyHoldMs": 8000, "receiptMs": 3200, "failedReceiptMs": 6000, "peekJobs": 4, "maxBlocks": 12, "maxCardChars": 64000, "voiceFlushMs": 300}
+}

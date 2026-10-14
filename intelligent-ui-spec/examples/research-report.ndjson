@@ -1,0 +1,12 @@
+{"t":"card","id":"c8","title":"EU e-bike growth leaders, 2025–26","status":"working","mode":"full"}
+{"t":"block","id":"o1","type":"outline","props":{"sections":[{"id":"r1","title":"Summary","state":"writing"},{"id":"r2","title":"Growth leaders","state":"pending"},{"id":"r3","title":"Methods and caveats","state":"pending"}]}}
+{"t":"block","id":"a1","type":"answer","props":{"text":"Cowboy and two German brands grew fastest; VanMoof shrank after its restart."}}
+{"t":"block","id":"t1","type":"text","props":{"md":"Unit sales data is patchy, so growth is estimated from three kinds of sources [^s1][^s2]."}}
+{"t":"block","id":"f1","type":"finding","props":{"claim":"Cowboy's 2025 unit sales grew about 40% year on year","confidence":"medium","cites":["s1","s2"],"status":"confirmed"}}
+{"t":"block","id":"ev1","type":"evidence","props":{"id":"ev1","caption":"Brands, 2025","columns":[{"key":"brand","label":"Brand"},{"key":"country","label":"Country"},{"key":"units","label":"Units","format":"number"},{"key":"growth","label":"YoY","format":"percent"}],"rows":[{"cells":{"brand":"Cowboy","country":"BE","units":42000,"growth":0.4},"cite":["s1","s2"]},{"cells":{"brand":"VanMoof","country":"NL","units":31000,"growth":-0.1},"cite":["s4"],"conflict":true}]}}
+{"t":"block","id":"g1","type":"chart","props":{"kind":"bar","title":"Year-on-year growth","x":{"key":"brand","type":"category"},"series":[{"key":"growth","label":"YoY growth"}],"data":{"$ref":"ev1.rows"},"yFormat":"percent"}}
+{"t":"block","id":"fl1","type":"filters","props":{"targets":["ev1","g1"],"facets":[{"key":"country","label":"Country","kind":"multiselect","options":["BE","DE","FR","NL"]}],"sort":[{"key":"growth","label":"Growth"}]}}
+{"t":"block","id":"sr1","type":"sources","props":{"items":[{"title":"European e-bike market report 2026","site":"example.org","url":"https://example.org/eu-ebike-market-2026","trust":"external"}]}}
+{"t":"patch","id":"o1","props":{"sections":[{"id":"r1","title":"Summary","state":"done"},{"id":"r2","title":"Growth leaders","state":"done"},{"id":"r3","title":"Methods and caveats","state":"done"}]}}
+{"t":"status","status":"ready"}
+{"t":"end"}

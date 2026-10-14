@@ -1,0 +1,45 @@
+{
+  "id": "card-number",
+  "utterance": "example number",
+  "status": "ready",
+  "screen": {
+    "title": "Number",
+    "blocks": [
+      {
+        "id": "n1",
+        "type": "number",
+        "label": "Revenue · Q3",
+        "value": "$1.84M",
+        "delta": "+24% vs Q2",
+        "up": true,
+        "series": [
+          {
+            "v": 1.21
+          },
+          {
+            "v": 1.3
+          },
+          {
+            "v": 1.38
+          },
+          {
+            "v": 1.45
+          },
+          {
+            "v": 1.52
+          },
+          {
+            "v": 1.6
+          },
+          {
+            "v": 1.71
+          },
+          {
+            "v": 1.84
+          }
+        ],
+        "source": "Stripe"
+      }
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+ "wake": {
+  "name": "wake",
+  "ms": 1622,
+  "lufs": -17.9,
+  "peak_db": -7.5
+ },
+ "listen-on": {
+  "name": "listen-on",
+  "ms": 1035,
+  "lufs": -18.0,
+  "peak_db": -6.9
+ },
+ "listen-off": {
+  "name": "listen-off",
+  "ms": 991,
+  "lufs": -18.0,
+  "peak_db": -6.4
+ },
+ "tick": {
+  "name": "tick",
+  "ms": 892,
+  "lufs": -24.5,
+  "peak_db": -2.2
+ },
+ "appear": {
+  "name": "appear",
+  "ms": 1218,
+  "lufs": -18.0,
+  "peak_db": -5.2
+ },
+ "reshape": {
+  "name": "reshape",
+  "ms": 976,
+  "lufs": -21.0,
+  "peak_db": -3.9
+ },
+ "ready": {
+  "name": "ready",
+  "ms": 1268,
+  "lufs": -20.0,
+  "peak_db": -10.9
+ },
+ "needs-you": {
+  "name": "needs-you",
+  "ms": 1308,
+  "lufs": -18.0,
+  "peak_db": -10.4
+ },
+ "approve": {
+  "name": "approve",
+  "ms": 1081,
+  "lufs": -18.0,
+  "peak_db": -5.8
+ },
+ "sent": {
+  "name": "sent",
+  "ms": 1594,
+  "lufs": -18.0,
+  "peak_db": -8.9
+ },
+ "dismiss": {
+  "name": "dismiss",
+  "ms": 991,
+  "lufs": -22.0,
+  "peak_db": -6.1
+ },
+ "error": {
+  "name": "error",
+  "ms": 1155,
+  "lufs": -18.0,
+  "peak_db": -9.9
+ },
+ "undo": {
+  "name": "undo",
+  "ms": 1023,
+  "lufs": -18.0,
+  "peak_db": -7.5
+ }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "card-answer",
+  "utterance": "example answer",
+  "status": "ready",
+  "screen": {
+    "title": "Answer",
+    "blocks": [
+      {
+        "id": "a1",
+        "type": "answer",
+        "text": "Up 24% on Q2. One renewal is at risk.",
+        "detail": "Northwind renews Oct 30.",
+        "sources": [
+          "HubSpot",
+          "Stripe"
+        ]
+      }
+    ]
+  }
+}

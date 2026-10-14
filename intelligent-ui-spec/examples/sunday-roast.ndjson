@@ -1,0 +1,15 @@
+{"t":"card","id":"c1","title":"Sunday lamb roast","status":"working"}
+{"t":"state","vars":{"guests":6}}
+{"t":"block","id":"b1","type":"answer","props":{"text":"Roast a bone-in leg of lamb with crispy potatoes, and do almost everything before guests arrive."}}
+{"t":"block","id":"b2","type":"columns","props":{"count":2,"ratio":"1:2"}}
+{"t":"block","id":"b3","type":"image","parent":"b2","slot":0,"props":{"query":"rosemary garlic roast leg of lamb on carving board","alt":"Roast leg of lamb","aspect":"5:4"}}
+{"t":"block","id":"b4","type":"facts","parent":"b2","slot":1,"props":{"items":[{"label":"Style","value":"Cozy, family-style"},{"label":"Cooking","value":"2–3 hours"},{"label":"Hands-on","value":"About 45 min"}]}}
+{"t":"block","id":"b5","type":"heading","props":{"text":"How much to buy","level":2}}
+{"t":"block","id":"b6","type":"control","props":{"var":"guests","label":"Guests","kind":"stepper","min":2,"max":16,"step":1}}
+{"t":"block","id":"b7","type":"result","props":{"label":"Bone-in lamb","value":{"$calc":"round(guests * 0.4, 1)","format":"number"},"unit":"kg"}}
+{"t":"block","id":"b8","type":"result","props":{"label":"Potatoes","value":{"$calc":"guests * 250","format":"number"},"unit":"g"}}
+{"t":"block","id":"b9","type":"agenda","props":{"label":"Timeline (eating at 6 PM)","items":[{"time":"3:00 PM","title":"Lamb out of the fridge"},{"time":"3:45 PM","title":"Lamb into a 425°F oven, then 350°F"},{"time":"5:00 PM","title":"Rest lamb; potatoes in"},{"time":"5:40 PM","title":"Carve"},{"time":"6:00 PM","title":"Eat"}]}}
+{"t":"block","id":"b10","type":"note","props":{"kind":"warn","label":"Food safety","text":"Use a thermometer: 145°F in the thickest part, then rest at least 3 minutes."}}
+{"t":"block","id":"b11","type":"buttons","props":{"items":[{"kind":"send","label":"Plan for {guests}","text":"Adjust the whole plan for {guests} guests"},{"kind":"send","label":"Vegetarian sides","text":"Add vegetarian side dishes","style":"secondary"}]}}
+{"t":"status","status":"ready"}
+{"t":"end"}

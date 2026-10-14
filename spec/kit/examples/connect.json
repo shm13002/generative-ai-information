@@ -1,0 +1,17 @@
+{
+  "id": "card-connect",
+  "utterance": "example connect",
+  "status": "ready",
+  "screen": {
+    "title": "Connect",
+    "blocks": [
+      {
+        "id": "cn1",
+        "type": "connect",
+        "provider": "hubspot",
+        "label": "Connect HubSpot to update deals",
+        "state": "idle"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+{"t":"card","id":"c60","title":"Your morning","status":"working","mode":"full","transition":"burst","say":"On it. 16 things, all at once."}
+{"t":"block","id":"tg1","type":"taskgrid","props":{"title":"16 running","layout":"grid","items":[{"id":"t1","title":"Inbox triage","state":"working"},{"id":"t2","title":"Prep for 10:00","state":"working"},{"id":"t3","title":"Chase late invoices","app":"Stripe","state":"working"},{"id":"t4","title":"Hiring post","state":"working"}]}}
+{"t":"block","id":"tb1","type":"timeback","props":{"label":"Time back today","minutes":25,"estimate":true}}
+{"t":"end"}

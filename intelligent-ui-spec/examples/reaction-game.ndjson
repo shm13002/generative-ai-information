@@ -1,0 +1,5 @@
+{"t":"card","id":"c4","title":"Reaction-time game","status":"working"}
+{"t":"block","id":"b1","type":"text","props":{"md":"Tap the square **as soon as it turns green**. Five rounds, best average wins."}}
+{"t":"block","id":"b2","type":"app","props":{"title":"Reaction game","height":320,"permissions":["storage"],"fallback":"A reaction-time game: wait for green, tap fast, five rounds.","html":"<div id=g class=box>Wait…</div><style>.box{height:260px;display:grid;place-items:center;border-radius:16px;background:var(--ui-panel);color:var(--ui-text);font:600 22px var(--ui-font)}</style><script>/* game loop using host.storage + host.resize */</script>"}}
+{"t":"status","status":"ready"}
+{"t":"end"}

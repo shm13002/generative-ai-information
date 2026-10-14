@@ -1,0 +1,42 @@
+{
+  "id": "card-list",
+  "utterance": "example list",
+  "status": "ready",
+  "screen": {
+    "title": "List",
+    "blocks": [
+      {
+        "id": "l1",
+        "type": "list",
+        "label": "Open deals",
+        "columns": [
+          "Deal",
+          "Stage",
+          "ARR"
+        ],
+        "rows": [
+          [
+            "Halcyon",
+            "Negotiation",
+            "$26K"
+          ],
+          [
+            "Northwind",
+            "Proposal",
+            "$18K"
+          ],
+          [
+            "Bluefin",
+            "Discovery",
+            "$9K"
+          ]
+        ],
+        "highlight": 0,
+        "action": {
+          "label": "Chase Halcyon",
+          "ask": "Draft a nudge to Halcyon"
+        }
+      }
+    ]
+  }
+}

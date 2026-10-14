@@ -1,0 +1,17 @@
+{
+  "id": "card-created",
+  "utterance": "example created",
+  "status": "ready",
+  "screen": {
+    "title": "Created",
+    "blocks": [
+      {
+        "id": "c1",
+        "type": "created",
+        "kind": "page",
+        "title": "Q4 board update",
+        "detail": "6 slides · draft"
+      }
+    ]
+  }
+}

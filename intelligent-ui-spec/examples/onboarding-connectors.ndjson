@@ -1,0 +1,3 @@
+{"t":"card","id":"c40","title":"Set up","status":"needs-you","mode":"card","origin":"onboarding","say":"Let's set you up. Which tools do you use?"}
+{"t":"block","id":"k1","type":"connectors","props":{"hint":"Say “connect them”","items":[{"provider":"gmail","label":"Gmail","state":"idle"},{"provider":"slack","label":"Slack","state":"idle"},{"provider":"hubspot","label":"HubSpot","state":"idle"},{"provider":"stripe","label":"Stripe","state":"idle"}]}}
+{"t":"end"}

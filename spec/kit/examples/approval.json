@@ -1,0 +1,17 @@
+{
+  "id": "card-approval",
+  "utterance": "example approval",
+  "status": "needs-you",
+  "screen": {
+    "title": "Approval",
+    "blocks": [
+      {
+        "id": "ap1",
+        "type": "approval",
+        "kind": "email",
+        "title": "Jarvis wants to send 1 email",
+        "detail": "To Tomás Rivera · Two-year renewal"
+      }
+    ]
+  }
+}

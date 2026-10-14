@@ -1,0 +1,19 @@
+{"t":"card","id":"c20","title":"The raise","status":"working","mode":"card","transition":"auto","say":"70% committed. But one lead's gone quiet."}
+{"t":"block","id":"n1","type":"number","props":{"label":"Committed","value":1400000,"unit":"$","delta":"70% of $2M"}}
+{"t":"block","id":"g1","type":"list","props":{"columns":["Investor","Amount"],"rows":[["Rashid Fund","$500K"],["Arc Angels","$400K"],["Juno Capital","$300K"],["4 angels","$200K"]]}}
+{"t":"block","id":"w1","type":"note","props":{"kind":"warn","text":"1 lead gone quiet: Fernhill Capital"}}
+{"t":"status","status":"ready"}
+{"t":"end"}
+{"t":"card","id":"c20","title":"Nadia Brooks","status":"ready","mode":"card","transition":"particles","say":"Nadia Brooks at Fernhill. She's gone quiet since Sep 29."}
+{"t":"remove","id":"n1"}
+{"t":"remove","id":"g1"}
+{"t":"remove","id":"w1"}
+{"t":"block","id":"p1","type":"person","props":{"name":"Nadia Brooks","role":"Partner","org":"Fernhill Capital","facts":[{"label":"Check","value":"$500K"},{"label":"Stage","value":"Diligence"},{"label":"Asked for","value":"Retention"},{"label":"Last reply","value":"Sep 29"}]}}
+{"t":"block","id":"pv1","type":"provenance","props":{"target":"p1","field":"facts","label":"BRAIN","text":"Asked for retention data on Sep 29","count":1,"apps":["Gmail"],"dates":["Sep 29"]}}
+{"t":"end"}
+{"t":"card","id":"c20","title":"Fernhill Capital","status":"needs-you","mode":"card","transition":"flip","say":"She asked for retention numbers. Send her the update?"}
+{"t":"remove","id":"p1"}
+{"t":"remove","id":"pv1"}
+{"t":"block","id":"br1","type":"brief","props":{"title":"Fernhill Capital","bullets":["Leading a $500K check, now in diligence","Asked for retention data on Sep 29","Your Q3 retention: 92%, up from 84%"]}}
+{"t":"block","id":"e1","type":"email","props":{"to":["nadia@fernhill.vc"],"subject":"Q3 update: retention","body":"Hi Nadia, following up on retention: Q3 came in at 92%, up from 84% in Q2. Full metrics attached.","state":"draft"}}
+{"t":"end"}

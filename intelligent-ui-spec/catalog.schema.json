@@ -1,0 +1,5462 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Intelligent UI component catalog v1",
+ "line": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/ui-stream/v1/line.json",
+  "title": "UI stream line v1",
+  "oneOf": [
+   {
+    "type": "object",
+    "properties": {
+     "t": {
+      "const": "card"
+     },
+     "id": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "title": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "status": {
+      "enum": [
+       "working",
+       "ready",
+       "needs-you",
+       "error"
+      ]
+     },
+     "mode": {
+      "enum": [
+       "card",
+       "full"
+      ]
+     },
+     "surface": {
+      "enum": [
+       "window",
+       "notch"
+      ]
+     },
+     "priority": {
+      "enum": [
+       "needs-you",
+       "normal",
+       "quiet"
+      ]
+     },
+     "origin": {
+      "enum": [
+       "user",
+       "proactive",
+       "onboarding"
+      ]
+     },
+     "transition": {
+      "enum": [
+       "auto",
+       "reshape",
+       "particles",
+       "flip",
+       "split",
+       "merge",
+       "shrink-to-pill",
+       "banner",
+       "burst"
+      ]
+     },
+     "from": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 40
+      },
+      "maxItems": 20
+     },
+     "say": {
+      "type": "string",
+      "maxLength": 400
+     }
+    },
+    "required": [
+     "t",
+     "id"
+    ],
+    "additionalProperties": false
+   },
+   {
+    "type": "object",
+    "properties": {
+     "t": {
+      "const": "state"
+     },
+     "vars": {
+      "type": "object",
+      "maxProperties": 24,
+      "additionalProperties": {
+       "type": [
+        "number",
+        "string",
+        "boolean"
+       ]
+      }
+     }
+    },
+    "required": [
+     "t",
+     "vars"
+    ],
+    "additionalProperties": false
+   },
+   {
+    "type": "object",
+    "properties": {
+     "t": {
+      "const": "block"
+     },
+     "id": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "type": {
+      "enum": [
+       "answer",
+       "text",
+       "heading",
+       "note",
+       "list",
+       "steps",
+       "table",
+       "facts",
+       "brief",
+       "number",
+       "chart",
+       "comparison",
+       "agenda",
+       "progress",
+       "image",
+       "gallery",
+       "map",
+       "diagram",
+       "sources",
+       "buttons",
+       "choices",
+       "form",
+       "control",
+       "result",
+       "todo",
+       "tabs",
+       "person",
+       "email",
+       "approval",
+       "created",
+       "connect",
+       "error",
+       "columns",
+       "section",
+       "app",
+       "alert",
+       "glance",
+       "receipt",
+       "jobs",
+       "plan",
+       "research",
+       "sourcefeed",
+       "finding",
+       "evidence",
+       "outline",
+       "filters",
+       "taskplan",
+       "taskgrid",
+       "goalbar",
+       "quote",
+       "provenance",
+       "graph",
+       "interrupt",
+       "connectors",
+       "timeback"
+      ]
+     },
+     "parent": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "slot": {
+      "type": [
+       "integer",
+       "string"
+      ]
+     },
+     "props": {
+      "type": "object"
+     }
+    },
+    "required": [
+     "t",
+     "id",
+     "type",
+     "props"
+    ],
+    "additionalProperties": false
+   },
+   {
+    "type": "object",
+    "properties": {
+     "t": {
+      "const": "patch"
+     },
+     "id": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "props": {
+      "type": "object"
+     }
+    },
+    "required": [
+     "t",
+     "id",
+     "props"
+    ],
+    "additionalProperties": false
+   },
+   {
+    "type": "object",
+    "properties": {
+     "t": {
+      "const": "append"
+     },
+     "id": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "field": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "text": {
+      "type": "string",
+      "maxLength": 4000
+     }
+    },
+    "required": [
+     "t",
+     "id",
+     "field",
+     "text"
+    ],
+    "additionalProperties": false
+   },
+   {
+    "type": "object",
+    "properties": {
+     "t": {
+      "const": "remove"
+     },
+     "id": {
+      "type": "string",
+      "maxLength": 40
+     }
+    },
+    "required": [
+     "t",
+     "id"
+    ],
+    "additionalProperties": false
+   },
+   {
+    "type": "object",
+    "properties": {
+     "t": {
+      "const": "status"
+     },
+     "status": {
+      "enum": [
+       "working",
+       "ready",
+       "needs-you",
+       "error"
+      ]
+     },
+     "step": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "say": {
+      "type": "string",
+      "maxLength": 400
+     }
+    },
+    "required": [
+     "t",
+     "status"
+    ],
+    "additionalProperties": false
+   },
+   {
+    "type": "object",
+    "properties": {
+     "t": {
+      "const": "end"
+     }
+    },
+    "required": [
+     "t"
+    ],
+    "additionalProperties": false
+   }
+  ]
+ },
+ "serverEvents": {
+  "title": "Server-to-client events (SSE `data:`), added by the stream compiler",
+  "oneOf": [
+   {
+    "type": "object",
+    "properties": {
+     "ev": {
+      "const": "line"
+     },
+     "seq": {
+      "type": "integer"
+     },
+     "line": {
+      "type": "object"
+     }
+    },
+    "required": [
+     "ev",
+     "seq",
+     "line"
+    ],
+    "additionalProperties": false
+   },
+   {
+    "type": "object",
+    "properties": {
+     "ev": {
+      "const": "tail"
+     },
+     "seq": {
+      "type": "integer"
+     },
+     "id": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "type": {
+      "type": "string",
+      "maxLength": 30
+     },
+     "props": {
+      "type": "object"
+     }
+    },
+    "required": [
+     "ev",
+     "seq",
+     "id",
+     "props"
+    ],
+    "additionalProperties": false
+   },
+   {
+    "type": "object",
+    "properties": {
+     "ev": {
+      "const": "resolve"
+     },
+     "id": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "path": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "value": {}
+    },
+    "required": [
+     "ev",
+     "id",
+     "path",
+     "value"
+    ],
+    "additionalProperties": false
+   },
+   {
+    "type": "object",
+    "properties": {
+     "ev": {
+      "const": "diag"
+     },
+     "code": {
+      "enum": [
+       "unknown_prop",
+       "invalid_value",
+       "unknown_type",
+       "bad_json_repaired",
+       "bad_json_dropped",
+       "limit",
+       "bad_ref",
+       "bad_formula"
+      ]
+     },
+     "id": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "detail": {
+      "type": "string",
+      "maxLength": 300
+     }
+    },
+    "required": [
+     "ev",
+     "code"
+    ],
+    "additionalProperties": false
+   },
+   {
+    "type": "object",
+    "properties": {
+     "ev": {
+      "const": "text"
+     },
+     "delta": {
+      "type": "string",
+      "maxLength": 4000
+     }
+    },
+    "required": [
+     "ev",
+     "delta"
+    ],
+    "additionalProperties": false
+   },
+   {
+    "type": "object",
+    "properties": {
+     "ev": {
+      "const": "done"
+     },
+     "usage": {
+      "type": "object"
+     }
+    },
+    "required": [
+     "ev"
+    ],
+    "additionalProperties": false
+   }
+  ]
+ },
+ "components": {
+  "answer": {
+   "group": "Text & structure",
+   "purpose": "The one-line direct answer, big and first.",
+   "useWhen": "Almost every UI answer starts with one. A yes/no, a number, a verdict.",
+   "streaming": "Streams word by word (phrases 150 ms apart).",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "text": {
+      "type": "string",
+      "maxLength": 240
+     },
+     "detail": {
+      "type": "string",
+      "maxLength": 600
+     },
+     "tone": {
+      "enum": [
+       "neutral",
+       "good",
+       "warn",
+       "bad"
+      ]
+     }
+    },
+    "required": [
+     "text"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "text": "Yes — you can afford the trip if you skip one dinner out a week.",
+    "detail": "Based on the $3,200 budget you gave me.",
+    "tone": "good"
+   }
+  },
+  "text": {
+   "group": "Text & structure",
+   "purpose": "Markdown prose (bold, italics, links, inline code). No raw HTML.",
+   "useWhen": "Explanations, context, anything that reads best as sentences.",
+   "streaming": "Streams word by word; markdown is re-parsed each frame, open ** is closed automatically.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "md": {
+      "type": "string",
+      "maxLength": 6000
+     }
+    },
+    "required": [
+     "md"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "md": "A **bone-in leg** is forgiving and easy to carve. Rest it 30 minutes so the oven is free for potatoes."
+   }
+  },
+  "heading": {
+   "group": "Text & structure",
+   "purpose": "Section title.",
+   "useWhen": "Break a long answer into 2–5 parts.",
+   "streaming": "Appears when the line is complete (short).",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "text": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "level": {
+      "enum": [
+       1,
+       2,
+       3
+      ]
+     },
+     "eyebrow": {
+      "type": "string",
+      "maxLength": 40
+     }
+    },
+    "required": [
+     "text"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "text": "Your Sunday cooking timeline",
+    "level": 2
+   }
+  },
+  "note": {
+   "group": "Text & structure",
+   "purpose": "Callout box: tip, warning, safety note.",
+   "useWhen": "One important caveat the user must not miss. Max 2 per answer.",
+   "streaming": "Streams text.",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "label": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "text": {
+      "type": "string",
+      "maxLength": 600
+     },
+     "kind": {
+      "enum": [
+       "info",
+       "tip",
+       "warn",
+       "danger"
+      ]
+     }
+    },
+    "required": [
+     "text"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "kind": "warn",
+    "label": "Food safety",
+    "text": "USDA recommends 145°F internal temperature plus a 3-minute rest for whole cuts of lamb."
+   }
+  },
+  "list": {
+   "group": "Text & structure",
+   "purpose": "Bulleted or numbered list; optional columns (a light table).",
+   "useWhen": "3–12 parallel items. Use table if more than 3 columns.",
+   "streaming": "Rows draw in 110 ms apart as each item finishes.",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "label": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "ordered": {
+      "type": "boolean"
+     },
+     "columns": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 40
+      },
+      "maxItems": 4
+     },
+     "rows": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "string",
+          "maxLength": 400
+         },
+         {
+          "type": "object",
+          "properties": {
+           "$ref": {
+            "type": "string",
+            "maxLength": 120
+           }
+          },
+          "required": [
+           "$ref"
+          ],
+          "additionalProperties": false
+         },
+         {
+          "type": "object",
+          "properties": {
+           "$calc": {
+            "type": "string",
+            "maxLength": 200
+           },
+           "format": {
+            "enum": [
+             "number",
+             "currency",
+             "percent",
+             "duration",
+             "text"
+            ]
+           }
+          },
+          "required": [
+           "$calc"
+          ],
+          "additionalProperties": false
+         }
+        ]
+       },
+       "maxItems": 4,
+       "minItems": 1
+      },
+      "maxItems": 30,
+      "minItems": 1
+     },
+     "highlight": {
+      "type": "integer",
+      "minimum": 0
+     }
+    },
+    "required": [
+     "rows"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "label": "Overdue invoices",
+    "columns": [
+     "Client",
+     "Amount",
+     "Days"
+    ],
+    "rows": [
+     [
+      "Halden",
+      "$4,200",
+      "12"
+     ],
+     [
+      "Mira & Co",
+      "$980",
+      "5"
+     ]
+    ],
+    "highlight": 0
+   }
+  },
+  "steps": {
+   "group": "Text & structure",
+   "purpose": "Numbered how-to steps with optional time and detail.",
+   "useWhen": "Procedures, recipes, setup guides.",
+   "streaming": "Each step appears when complete; rows 110 ms apart.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "label": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "title": {
+         "type": "string",
+         "maxLength": 120
+        },
+        "detail": {
+         "type": "string",
+         "maxLength": 400
+        },
+        "time": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "image": {
+         "type": "string",
+         "maxLength": 200
+        }
+       },
+       "required": [
+        "title"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 20,
+      "minItems": 1
+     },
+     "checkable": {
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "items"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "label": "Crispy potatoes",
+    "checkable": true,
+    "items": [
+     {
+      "title": "Parboil 8–10 min",
+      "time": "4:30 PM"
+     },
+     {
+      "title": "Shake to rough the edges"
+     },
+     {
+      "title": "Roast in hot fat until deep gold",
+      "time": "5:00 PM"
+     }
+    ]
+   }
+  },
+  "table": {
+   "group": "Text & structure",
+   "purpose": "Real table with sortable columns.",
+   "useWhen": "Data with 3+ columns or more than 6 rows. Numbers right-aligned.",
+   "streaming": "Header first, then rows 110 ms apart.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "caption": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "columns": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "key": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "align": {
+         "enum": [
+          "left",
+          "right",
+          "center"
+         ]
+        },
+        "format": {
+         "enum": [
+          "text",
+          "number",
+          "currency",
+          "percent",
+          "date"
+         ]
+        }
+       },
+       "required": [
+        "key",
+        "label"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 8,
+      "minItems": 1
+     },
+     "rows": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "additionalProperties": {
+        "type": [
+         "string",
+         "number",
+         "null"
+        ]
+       }
+      },
+      "maxItems": 100,
+      "minItems": 1
+     },
+     "sortable": {
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "columns",
+     "rows"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "caption": "How much to buy",
+    "columns": [
+     {
+      "key": "g",
+      "label": "Guests",
+      "align": "right"
+     },
+     {
+      "key": "lamb",
+      "label": "Bone-in lamb"
+     }
+    ],
+    "rows": [
+     {
+      "g": 4,
+      "lamb": "3–4 lb"
+     },
+     {
+      "g": 8,
+      "lamb": "5–6 lb"
+     }
+    ]
+   }
+  },
+  "facts": {
+   "group": "Text & structure",
+   "purpose": "Label/value pairs (spec sheet).",
+   "useWhen": "Key facts about one thing: a place, product, plan.",
+   "streaming": "Pairs appear one by one.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "label": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "value": {
+         "oneOf": [
+          {
+           "type": "string",
+           "maxLength": 400
+          },
+          {
+           "type": "object",
+           "properties": {
+            "$ref": {
+             "type": "string",
+             "maxLength": 120
+            }
+           },
+           "required": [
+            "$ref"
+           ],
+           "additionalProperties": false
+          },
+          {
+           "type": "object",
+           "properties": {
+            "$calc": {
+             "type": "string",
+             "maxLength": 200
+            },
+            "format": {
+             "enum": [
+              "number",
+              "currency",
+              "percent",
+              "duration",
+              "text"
+             ]
+            }
+           },
+           "required": [
+            "$calc"
+           ],
+           "additionalProperties": false
+          }
+         ]
+        },
+        "icon": {
+         "type": "string",
+         "maxLength": 30
+        }
+       },
+       "required": [
+        "label",
+        "value"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 16,
+      "minItems": 1
+     }
+    },
+    "required": [
+     "items"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "items": [
+     {
+      "label": "Prep",
+      "value": "Mostly before guests arrive"
+     },
+     {
+      "label": "Cooking",
+      "value": "2–3 hours"
+     }
+    ]
+   }
+  },
+  "brief": {
+   "group": "Text & structure",
+   "purpose": "Short briefing: title, bullets, optional people.",
+   "useWhen": "Meeting prep, 'catch me up', summaries.",
+   "streaming": "Bullets stream as phrases.",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "bullets": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 240
+      },
+      "maxItems": 8,
+      "minItems": 1
+     },
+     "people": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string",
+         "maxLength": 60
+        },
+        "role": {
+         "type": "string",
+         "maxLength": 60
+        },
+        "note": {
+         "type": "string",
+         "maxLength": 160
+        }
+       },
+       "required": [
+        "name"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 6
+     }
+    },
+    "required": [
+     "bullets"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Halden renewal call",
+    "bullets": [
+     "Renewal due Nov 1",
+     "They asked for SSO twice"
+    ],
+    "people": [
+     {
+      "name": "Ana Ruiz",
+      "role": "VP Ops"
+     }
+    ]
+   }
+  },
+  "number": {
+   "group": "Numbers & data",
+   "purpose": "One big metric with delta and sparkline.",
+   "useWhen": "A single number is the answer (revenue, ETA, total).",
+   "streaming": "Counts up over 750 ms (ease-out cubic); sparkline draws 600 ms.",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "label": {
+      "type": "string",
+      "maxLength": 60
+     },
+     "value": {
+      "oneOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "string",
+        "maxLength": 40
+       },
+       {
+        "type": "object",
+        "properties": {
+         "$calc": {
+          "type": "string",
+          "maxLength": 200
+         },
+         "format": {
+          "enum": [
+           "number",
+           "currency",
+           "percent",
+           "duration"
+          ]
+         }
+        },
+        "required": [
+         "$calc"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "$ref": {
+          "type": "string",
+          "maxLength": 120
+         }
+        },
+        "required": [
+         "$ref"
+        ],
+        "additionalProperties": false
+       }
+      ]
+     },
+     "unit": {
+      "type": "string",
+      "maxLength": 12
+     },
+     "delta": {
+      "type": "string",
+      "maxLength": 20
+     },
+     "up": {
+      "type": "boolean"
+     },
+     "series": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "maxItems": 60
+     },
+     "source": {
+      "type": "string",
+      "maxLength": 120
+     }
+    },
+    "required": [
+     "value"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "label": "MRR",
+    "value": 48210,
+    "unit": "$",
+    "delta": "+6.2%",
+    "up": true,
+    "series": [
+     41,
+     43,
+     44,
+     46,
+     48.2
+    ]
+   }
+  },
+  "chart": {
+   "group": "Numbers & data",
+   "purpose": "Bar, line, area, pie/donut, scatter. Data inline or by $ref to a tool result.",
+   "useWhen": "Trends, shares, distributions. Never for fewer than 3 points. $calcSeries makes a live chart from state.",
+   "streaming": "Axes appear first; series draw over 900 ms once the data array is complete.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 100
+     },
+     "kind": {
+      "enum": [
+       "bar",
+       "line",
+       "area",
+       "pie",
+       "donut",
+       "scatter",
+       "stacked-bar"
+      ]
+     },
+     "x": {
+      "type": "object",
+      "properties": {
+       "key": {
+        "type": "string",
+        "maxLength": 30
+       },
+       "label": {
+        "type": "string",
+        "maxLength": 40
+       },
+       "type": {
+        "enum": [
+         "category",
+         "time",
+         "number"
+        ]
+       }
+      },
+      "required": [
+       "key"
+      ],
+      "additionalProperties": false
+     },
+     "series": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "key": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "color": {
+         "enum": [
+          "accent",
+          "blue",
+          "green",
+          "orange",
+          "red",
+          "purple",
+          "gray"
+         ]
+        }
+       },
+       "required": [
+        "key"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 6,
+      "minItems": 1
+     },
+     "data": {
+      "oneOf": [
+       {
+        "type": "array",
+        "items": {
+         "type": "object"
+        },
+        "maxItems": 500,
+        "minItems": 1
+       },
+       {
+        "type": "object",
+        "properties": {
+         "$ref": {
+          "type": "string",
+          "maxLength": 120
+         }
+        },
+        "required": [
+         "$ref"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "$calcSeries": {
+          "type": "object",
+          "properties": {
+           "x": {
+            "type": "string",
+            "maxLength": 30
+           },
+           "from": {
+            "type": "string",
+            "maxLength": 200
+           },
+           "to": {
+            "type": "string",
+            "maxLength": 200
+           },
+           "step": {
+            "type": "number",
+            "exclusiveMinimum": 0
+           },
+           "y": {
+            "type": "object",
+            "additionalProperties": {
+             "type": "string",
+             "maxLength": 200
+            },
+            "maxProperties": 6
+           }
+          },
+          "required": [
+           "x",
+           "from",
+           "to",
+           "y"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "required": [
+         "$calcSeries"
+        ],
+        "additionalProperties": false
+       }
+      ]
+     },
+     "yFormat": {
+      "enum": [
+       "number",
+       "currency",
+       "percent"
+      ]
+     },
+     "note": {
+      "type": "string",
+      "maxLength": 200
+     }
+    },
+    "required": [
+     "kind",
+     "series",
+     "data"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Savings by age 65",
+    "kind": "area",
+    "x": {
+     "key": "age",
+     "type": "number"
+    },
+    "series": [
+     {
+      "key": "bal",
+      "label": "Balance",
+      "color": "accent"
+     }
+    ],
+    "data": [
+     {
+      "age": 35,
+      "bal": 20000
+     },
+     {
+      "age": 45,
+      "bal": 110000
+     },
+     {
+      "age": 55,
+      "bal": 290000
+     },
+     {
+      "age": 65,
+      "bal": 610000
+     }
+    ],
+    "yFormat": "currency"
+   }
+  },
+  "comparison": {
+   "group": "Numbers & data",
+   "purpose": "Side-by-side options with rows of attributes, a winner and pros/cons.",
+   "useWhen": "2–4 options the user is choosing between.",
+   "streaming": "Column headers first, then attribute rows 110 ms apart; 'best pick' badge last.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 100
+     },
+     "options": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "name": {
+         "type": "string",
+         "maxLength": 60
+        },
+        "image": {
+         "type": "string",
+         "maxLength": 200
+        },
+        "price": {
+         "oneOf": [
+          {
+           "type": "string",
+           "maxLength": 400
+          },
+          {
+           "type": "object",
+           "properties": {
+            "$ref": {
+             "type": "string",
+             "maxLength": 120
+            }
+           },
+           "required": [
+            "$ref"
+           ],
+           "additionalProperties": false
+          },
+          {
+           "type": "object",
+           "properties": {
+            "$calc": {
+             "type": "string",
+             "maxLength": 200
+            },
+            "format": {
+             "enum": [
+              "number",
+              "currency",
+              "percent",
+              "duration",
+              "text"
+             ]
+            }
+           },
+           "required": [
+            "$calc"
+           ],
+           "additionalProperties": false
+          }
+         ]
+        },
+        "badge": {
+         "type": "string",
+         "maxLength": 30
+        }
+       },
+       "required": [
+        "id",
+        "name"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 4,
+      "minItems": 2
+     },
+     "rows": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "label": {
+         "type": "string",
+         "maxLength": 60
+        },
+        "values": {
+         "type": "array",
+         "items": {
+          "oneOf": [
+           {
+            "type": "string",
+            "maxLength": 400
+           },
+           {
+            "type": "object",
+            "properties": {
+             "$ref": {
+              "type": "string",
+              "maxLength": 120
+             }
+            },
+            "required": [
+             "$ref"
+            ],
+            "additionalProperties": false
+           },
+           {
+            "type": "object",
+            "properties": {
+             "$calc": {
+              "type": "string",
+              "maxLength": 200
+             },
+             "format": {
+              "enum": [
+               "number",
+               "currency",
+               "percent",
+               "duration",
+               "text"
+              ]
+             }
+            },
+            "required": [
+             "$calc"
+            ],
+            "additionalProperties": false
+           }
+          ]
+         },
+         "maxItems": 4,
+         "minItems": 2
+        },
+        "better": {
+         "enum": [
+          "higher",
+          "lower",
+          "none"
+         ]
+        }
+       },
+       "required": [
+        "label",
+        "values"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 15,
+      "minItems": 1
+     },
+     "pros": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "array",
+       "items": {
+        "type": "string",
+        "maxLength": 120
+       },
+       "maxItems": 4
+      }
+     },
+     "cons": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "array",
+       "items": {
+        "type": "string",
+        "maxLength": 120
+       },
+       "maxItems": 4
+      }
+     },
+     "pick": {
+      "type": "string",
+      "maxLength": 30
+     },
+     "pickReason": {
+      "type": "string",
+      "maxLength": 200
+     }
+    },
+    "required": [
+     "options",
+     "rows"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Which e-bike?",
+    "options": [
+     {
+      "id": "a",
+      "name": "City 7"
+     },
+     {
+      "id": "b",
+      "name": "Trail X"
+     }
+    ],
+    "rows": [
+     {
+      "label": "Range",
+      "values": [
+       "60 km",
+       "90 km"
+      ],
+      "better": "higher"
+     },
+     {
+      "label": "Weight",
+      "values": [
+       "19 kg",
+       "24 kg"
+      ],
+      "better": "lower"
+     }
+    ],
+    "pick": "a",
+    "pickReason": "Lighter for stairs."
+   }
+  },
+  "agenda": {
+   "group": "Numbers & data",
+   "purpose": "Time-ordered items: schedule, itinerary, cooking timeline.",
+   "useWhen": "Anything with clock times or dates in order.",
+   "streaming": "Rows 110 ms apart; 'next' item pulses once.",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "label": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "time": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "title": {
+         "type": "string",
+         "maxLength": 120
+        },
+        "meta": {
+         "type": "string",
+         "maxLength": 160
+        },
+        "state": {
+         "enum": [
+          "",
+          "done",
+          "next",
+          "conflict",
+          "moved",
+          "new"
+         ]
+        }
+       },
+       "required": [
+        "time",
+        "title"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 30,
+      "minItems": 1
+     }
+    },
+    "required": [
+     "items"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "label": "Sunday",
+    "items": [
+     {
+      "time": "3:00 PM",
+      "title": "Lamb out of the fridge"
+     },
+     {
+      "time": "3:45 PM",
+      "title": "Lamb into oven",
+      "state": "next"
+     },
+     {
+      "time": "6:00 PM",
+      "title": "Eat"
+     }
+    ]
+   }
+  },
+  "progress": {
+   "group": "Numbers & data",
+   "purpose": "Multi-step status of the agent's own work.",
+   "useWhen": "Long jobs (searching, booking, building a tool). Also shows while 'working'.",
+   "streaming": "Active step shimmers; each change plays the quiet tick.",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "steps": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "text": {
+         "type": "string",
+         "maxLength": 120
+        },
+        "state": {
+         "enum": [
+          "pending",
+          "active",
+          "done",
+          "failed"
+         ]
+        }
+       },
+       "required": [
+        "text",
+        "state"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 10,
+      "minItems": 1
+     }
+    },
+    "required": [
+     "steps"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "steps": [
+     {
+      "text": "Checking calendar",
+      "state": "done"
+     },
+     {
+      "text": "Finding a table for 6",
+      "state": "active"
+     },
+     {
+      "text": "Hold reservation",
+      "state": "pending"
+     }
+    ]
+   }
+  },
+  "image": {
+   "group": "Visual & media",
+   "purpose": "One image. The model writes a search query or an asset id; the server resolves the real URL.",
+   "useWhen": "When seeing it helps (a dish, a place, a part). Never decorative filler.",
+   "streaming": "Placeholder with the right aspect ratio at once; image fades in 280 ms when the server patches the URL.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "query": {
+      "type": "string",
+      "maxLength": 200
+     },
+     "assetId": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "alt": {
+      "type": "string",
+      "maxLength": 200
+     },
+     "aspect": {
+      "enum": [
+       "1:1",
+       "4:3",
+       "5:4",
+       "16:9",
+       "3:4"
+      ]
+     },
+     "caption": {
+      "type": "string",
+      "maxLength": 160
+     },
+     "credit": {
+      "type": "string",
+      "maxLength": 120
+     }
+    },
+    "required": [
+     "alt"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "query": "slow roasted rosemary garlic leg of lamb on carving board",
+    "alt": "Roast leg of lamb",
+    "aspect": "5:4"
+   }
+  },
+  "gallery": {
+   "group": "Visual & media",
+   "purpose": "Grid or carousel of images (moodboard, options, steps).",
+   "useWhen": "3–12 images the user compares or browses.",
+   "streaming": "Tiles appear with placeholders 110 ms apart; each fades in when resolved.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 100
+     },
+     "layout": {
+      "enum": [
+       "grid",
+       "carousel",
+       "masonry"
+      ]
+     },
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "query": {
+         "type": "string",
+         "maxLength": 200
+        },
+        "assetId": {
+         "type": "string",
+         "maxLength": 120
+        },
+        "alt": {
+         "type": "string",
+         "maxLength": 200
+        },
+        "caption": {
+         "type": "string",
+         "maxLength": 80
+        },
+        "action": {
+         "type": "object",
+         "properties": {
+          "kind": {
+           "enum": [
+            "send",
+            "open",
+            "copy",
+            "set",
+            "submit",
+            "approve",
+            "deny",
+            "run"
+           ]
+          },
+          "label": {
+           "type": "string",
+           "maxLength": 40
+          },
+          "text": {
+           "type": "string",
+           "maxLength": 500
+          },
+          "url": {
+           "type": "string",
+           "maxLength": 500,
+           "format": "uri"
+          },
+          "var": {
+           "type": "string",
+           "maxLength": 40
+          },
+          "value": {
+           "type": [
+            "number",
+            "string",
+            "boolean"
+           ]
+          },
+          "style": {
+           "enum": [
+            "primary",
+            "secondary",
+            "ghost",
+            "danger"
+           ]
+          },
+          "icon": {
+           "type": "string",
+           "maxLength": 30
+          }
+         },
+         "required": [
+          "kind",
+          "label"
+         ],
+         "additionalProperties": false
+        }
+       },
+       "required": [
+        "alt"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 12,
+      "minItems": 2
+     }
+    },
+    "required": [
+     "items"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Vest ideas",
+    "layout": "grid",
+    "items": [
+     {
+      "query": "dog vest reflective sand color",
+      "alt": "Sand vest"
+     },
+     {
+      "query": "cozy quilted dog vest",
+      "alt": "Quilted vest"
+     }
+    ]
+   }
+  },
+  "map": {
+   "group": "Visual & media",
+   "purpose": "Interactive map with pins and an optional route.",
+   "useWhen": "Places, road trips, 'near me'. Coordinates come from a geocoding tool, not the model's memory.",
+   "streaming": "Tiles load first; pins drop 110 ms apart; route draws 900 ms.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 100
+     },
+     "center": {
+      "type": "object",
+      "properties": {
+       "lat": {
+        "type": "number",
+        "minimum": -90,
+        "maximum": 90
+       },
+       "lng": {
+        "type": "number",
+        "minimum": -180,
+        "maximum": 180
+       }
+      },
+      "required": [
+       "lat",
+       "lng"
+      ],
+      "additionalProperties": false
+     },
+     "zoom": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 18
+     },
+     "pins": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 80
+        },
+        "lat": {
+         "type": "number"
+        },
+        "lng": {
+         "type": "number"
+        },
+        "place": {
+         "type": "string",
+         "maxLength": 160
+        },
+        "note": {
+         "type": "string",
+         "maxLength": 200
+        },
+        "kind": {
+         "enum": [
+          "stop",
+          "food",
+          "sight",
+          "stay",
+          "start",
+          "end"
+         ]
+        }
+       },
+       "required": [
+        "label"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 30,
+      "minItems": 1
+     },
+     "route": {
+      "enum": [
+       "none",
+       "driving",
+       "walking",
+       "cycling",
+       "transit"
+      ]
+     }
+    },
+    "required": [
+     "pins"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Coast road trip",
+    "route": "driving",
+    "pins": [
+     {
+      "label": "Start: Portland",
+      "place": "Portland, OR",
+      "kind": "start"
+     },
+     {
+      "label": "Cannon Beach",
+      "place": "Cannon Beach, OR",
+      "kind": "sight",
+      "note": "Worth the detour at sunset"
+     }
+    ]
+   }
+  },
+  "diagram": {
+   "group": "Visual & media",
+   "purpose": "Nodes-and-arrows diagram, or a labelled picture with tappable hotspots.",
+   "useWhen": "How parts connect (bike systems, a process, an org chart).",
+   "streaming": "Nodes pop in 110 ms apart in layout order; edges draw 400 ms after both ends exist.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 100
+     },
+     "kind": {
+      "enum": [
+       "flow",
+       "tree",
+       "cycle",
+       "hotspots"
+      ]
+     },
+     "direction": {
+      "enum": [
+       "LR",
+       "TB"
+      ]
+     },
+     "nodes": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 60
+        },
+        "detail": {
+         "type": "string",
+         "maxLength": 400
+        },
+        "group": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "x": {
+         "type": "number",
+         "minimum": 0,
+         "maximum": 1
+        },
+        "y": {
+         "type": "number",
+         "minimum": 0,
+         "maximum": 1
+        }
+       },
+       "required": [
+        "id",
+        "label"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 30,
+      "minItems": 1
+     },
+     "edges": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "from": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "to": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        }
+       },
+       "required": [
+        "from",
+        "to"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 60
+     },
+     "image": {
+      "type": "object",
+      "properties": {
+       "query": {
+        "type": "string",
+        "maxLength": 200
+       },
+       "alt": {
+        "type": "string",
+        "maxLength": 200
+       }
+      },
+      "required": [
+       "alt"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "kind",
+     "nodes"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "7-speed bike",
+    "kind": "flow",
+    "direction": "LR",
+    "nodes": [
+     {
+      "id": "p",
+      "label": "Pedals"
+     },
+     {
+      "id": "c",
+      "label": "Chain"
+     },
+     {
+      "id": "w",
+      "label": "Rear wheel",
+      "detail": "Seven cogs change the effort."
+     }
+    ],
+    "edges": [
+     {
+      "from": "p",
+      "to": "c"
+     },
+     {
+      "from": "c",
+      "to": "w"
+     }
+    ]
+   }
+  },
+  "sources": {
+   "group": "Visual & media",
+   "purpose": "Citation chips (title, site, trust level).",
+   "useWhen": "Any answer that used the web or user documents.",
+   "streaming": "Chips slide in at the end.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "title": {
+         "type": "string",
+         "maxLength": 160
+        },
+        "url": {
+         "type": "string",
+         "maxLength": 500
+        },
+        "site": {
+         "type": "string",
+         "maxLength": 80
+        },
+        "trust": {
+         "enum": [
+          "first-party",
+          "external",
+          "untrusted"
+         ]
+        }
+       },
+       "required": [
+        "title"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 10,
+      "minItems": 1
+     }
+    },
+    "required": [
+     "items"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "items": [
+     {
+      "title": "Lamb safe temperatures",
+      "site": "usda.gov",
+      "url": "https://www.fsis.usda.gov/",
+      "trust": "external"
+     }
+    ]
+   }
+  },
+  "buttons": {
+   "group": "Interactive",
+   "purpose": "A row of action buttons (follow-ups, open, copy).",
+   "useWhen": "End of an answer: 2–3 next steps. Max 4 buttons.",
+   "streaming": "Appear last, fade 200 ms.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "kind": {
+         "enum": [
+          "send",
+          "open",
+          "copy",
+          "set",
+          "submit",
+          "approve",
+          "deny",
+          "run"
+         ]
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "text": {
+         "type": "string",
+         "maxLength": 500
+        },
+        "url": {
+         "type": "string",
+         "maxLength": 500,
+         "format": "uri"
+        },
+        "var": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "value": {
+         "type": [
+          "number",
+          "string",
+          "boolean"
+         ]
+        },
+        "style": {
+         "enum": [
+          "primary",
+          "secondary",
+          "ghost",
+          "danger"
+         ]
+        },
+        "icon": {
+         "type": "string",
+         "maxLength": 30
+        }
+       },
+       "required": [
+        "kind",
+        "label"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 4,
+      "minItems": 1
+     },
+     "layout": {
+      "enum": [
+       "row",
+       "stack"
+      ]
+     }
+    },
+    "required": [
+     "items"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "items": [
+     {
+      "kind": "send",
+      "label": "Adjust for 5 guests",
+      "text": "Adjust the lamb roast plan for 5 guests"
+     },
+     {
+      "kind": "send",
+      "label": "Add vegetarian sides",
+      "text": "Add vegetarian side dishes",
+      "style": "secondary"
+     }
+    ]
+   }
+  },
+  "choices": {
+   "group": "Interactive",
+   "purpose": "Tappable chips to answer a question quickly (single or multi select).",
+   "useWhen": "When you need one missing fact before answering well.",
+   "streaming": "Chips appear 60 ms apart.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "question": {
+      "type": "string",
+      "maxLength": 160
+     },
+     "multi": {
+      "type": "boolean"
+     },
+     "var": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "options": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "value": {
+         "type": "string",
+         "maxLength": 80
+        }
+       },
+       "required": [
+        "label"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 8,
+      "minItems": 2
+     },
+     "submit": {
+      "type": "object",
+      "properties": {
+       "kind": {
+        "enum": [
+         "send",
+         "open",
+         "copy",
+         "set",
+         "submit",
+         "approve",
+         "deny",
+         "run"
+        ]
+       },
+       "label": {
+        "type": "string",
+        "maxLength": 40
+       },
+       "text": {
+        "type": "string",
+        "maxLength": 500
+       },
+       "url": {
+        "type": "string",
+        "maxLength": 500,
+        "format": "uri"
+       },
+       "var": {
+        "type": "string",
+        "maxLength": 40
+       },
+       "value": {
+        "type": [
+         "number",
+         "string",
+         "boolean"
+        ]
+       },
+       "style": {
+        "enum": [
+         "primary",
+         "secondary",
+         "ghost",
+         "danger"
+        ]
+       },
+       "icon": {
+        "type": "string",
+        "maxLength": 30
+       }
+      },
+      "required": [
+       "kind",
+       "label"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "options"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "question": "How many guests?",
+    "var": "guests",
+    "options": [
+     {
+      "label": "4",
+      "value": "4"
+     },
+     {
+      "label": "6",
+      "value": "6"
+     },
+     {
+      "label": "8+",
+      "value": "8"
+     }
+    ]
+   }
+  },
+  "form": {
+   "group": "Interactive",
+   "purpose": "A small form; submitting sends one follow-up message (or calls a tool) with the values.",
+   "useWhen": "Collecting 2–6 inputs (booking, a brief, a filter).",
+   "streaming": "Fields appear 110 ms apart; submit enables when required fields are filled.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 100
+     },
+     "fields": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 60
+        },
+        "kind": {
+         "enum": [
+          "text",
+          "number",
+          "date",
+          "time",
+          "select",
+          "multiselect",
+          "toggle",
+          "textarea",
+          "email"
+         ]
+        },
+        "required": {
+         "type": "boolean"
+        },
+        "options": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "maxLength": 60
+         },
+         "maxItems": 20
+        },
+        "placeholder": {
+         "type": "string",
+         "maxLength": 80
+        },
+        "default": {
+         "type": [
+          "string",
+          "number",
+          "boolean"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "label",
+        "kind"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 10,
+      "minItems": 1
+     },
+     "submit": {
+      "type": "object",
+      "properties": {
+       "kind": {
+        "enum": [
+         "send",
+         "open",
+         "copy",
+         "set",
+         "submit",
+         "approve",
+         "deny",
+         "run"
+        ]
+       },
+       "label": {
+        "type": "string",
+        "maxLength": 40
+       },
+       "text": {
+        "type": "string",
+        "maxLength": 500
+       },
+       "url": {
+        "type": "string",
+        "maxLength": 500,
+        "format": "uri"
+       },
+       "var": {
+        "type": "string",
+        "maxLength": 40
+       },
+       "value": {
+        "type": [
+         "number",
+         "string",
+         "boolean"
+        ]
+       },
+       "style": {
+        "enum": [
+         "primary",
+         "secondary",
+         "ghost",
+         "danger"
+        ]
+       },
+       "icon": {
+        "type": "string",
+        "maxLength": 30
+       }
+      },
+      "required": [
+       "kind",
+       "label"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "fields",
+     "submit"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Book a table",
+    "fields": [
+     {
+      "name": "date",
+      "label": "Date",
+      "kind": "date",
+      "required": true
+     },
+     {
+      "name": "size",
+      "label": "Party size",
+      "kind": "number",
+      "default": 6
+     }
+    ],
+    "submit": {
+     "kind": "submit",
+     "label": "Find tables",
+     "text": "Find a table on {date} for {size} people"
+    }
+   }
+  },
+  "control": {
+   "group": "Interactive",
+   "purpose": "A live input bound to a state variable: slider, stepper, toggle, segmented, select.",
+   "useWhen": "Calculators and 'what if' explorers. Changing it never calls the model.",
+   "streaming": "Appears when complete; values update at 60 fps locally.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "var": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "label": {
+      "type": "string",
+      "maxLength": 60
+     },
+     "kind": {
+      "enum": [
+       "slider",
+       "stepper",
+       "toggle",
+       "segmented",
+       "select",
+       "number"
+      ]
+     },
+     "min": {
+      "type": "number"
+     },
+     "max": {
+      "type": "number"
+     },
+     "step": {
+      "type": "number"
+     },
+     "options": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "value": {
+         "type": [
+          "string",
+          "number"
+         ]
+        }
+       },
+       "required": [
+        "label",
+        "value"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 8
+     },
+     "unit": {
+      "type": "string",
+      "maxLength": 12
+     }
+    },
+    "required": [
+     "var",
+     "kind"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "var": "guests",
+    "label": "Guests",
+    "kind": "stepper",
+    "min": 2,
+    "max": 16,
+    "step": 1
+   }
+  },
+  "result": {
+   "group": "Interactive",
+   "purpose": "A computed read-out: label + value from a safe formula over state.",
+   "useWhen": "Pairs with control: totals, per-person shares, projections.",
+   "streaming": "Number rolls to each new value in 250 ms (750 ms on first show).",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "label": {
+      "type": "string",
+      "maxLength": 60
+     },
+     "value": {
+      "oneOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "string",
+        "maxLength": 40
+       },
+       {
+        "type": "object",
+        "properties": {
+         "$calc": {
+          "type": "string",
+          "maxLength": 200
+         },
+         "format": {
+          "enum": [
+           "number",
+           "currency",
+           "percent",
+           "duration"
+          ]
+         }
+        },
+        "required": [
+         "$calc"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "$ref": {
+          "type": "string",
+          "maxLength": 120
+         }
+        },
+        "required": [
+         "$ref"
+        ],
+        "additionalProperties": false
+       }
+      ]
+     },
+     "unit": {
+      "type": "string",
+      "maxLength": 12
+     },
+     "size": {
+      "enum": [
+       "s",
+       "m",
+       "l"
+      ]
+     },
+     "note": {
+      "type": "string",
+      "maxLength": 160
+     }
+    },
+    "required": [
+     "label",
+     "value"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "label": "Lamb to buy",
+    "value": {
+     "$calc": "round(guests * 0.4, 1)",
+     "format": "number"
+    },
+    "unit": "kg",
+    "size": "l"
+   }
+  },
+  "todo": {
+   "group": "Interactive",
+   "purpose": "Checklist the user can tick (state is kept locally and can sync back).",
+   "useWhen": "Shopping lists, packing lists, 'what needs me'.",
+   "streaming": "Rows 110 ms apart; ticking plays a soft tick.",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "label": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "title": {
+         "type": "string",
+         "maxLength": 120
+        },
+        "detail": {
+         "type": "string",
+         "maxLength": 200
+        },
+        "action": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "done": {
+         "type": "boolean"
+        }
+       },
+       "required": [
+        "id",
+        "title"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 30,
+      "minItems": 1
+     }
+    },
+    "required": [
+     "items"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "label": "Also pick up",
+    "items": [
+     {
+      "id": "1",
+      "title": "Garlic & rosemary"
+     },
+     {
+      "id": "2",
+      "title": "Mint sauce"
+     },
+     {
+      "id": "3",
+      "title": "Vanilla ice cream",
+      "done": true
+     }
+    ]
+   }
+  },
+  "tabs": {
+   "group": "Layout",
+   "purpose": "Tabs; children point here with parent + slot.",
+   "useWhen": "2–6 views of the same thing (Frame / Wheels / Brakes).",
+   "streaming": "Tab strip appears first; the first tab's content streams; others fill in the background.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "tabs": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 30
+        }
+       },
+       "required": [
+        "id",
+        "label"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 6,
+      "minItems": 2
+     },
+     "initial": {
+      "type": "string",
+      "maxLength": 30
+     }
+    },
+    "required": [
+     "tabs"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "tabs": [
+     {
+      "id": "frame",
+      "label": "Frame"
+     },
+     {
+      "id": "wheels",
+      "label": "Wheels"
+     },
+     {
+      "id": "brakes",
+      "label": "Brakes"
+     }
+    ],
+    "initial": "frame"
+   }
+  },
+  "person": {
+   "group": "Agent & actions",
+   "purpose": "Contact card: name, role, org, facts.",
+   "useWhen": "Who-is questions, attendees, a contact to email.",
+   "streaming": "Name first, then facts.",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "role": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "org": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "note": {
+      "type": "string",
+      "maxLength": 240
+     },
+     "avatarQuery": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "facts": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "value": {
+         "type": "string",
+         "maxLength": 120
+        }
+       },
+       "required": [
+        "label",
+        "value"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 8
+     }
+    },
+    "required": [
+     "name"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "name": "Mira Chen",
+    "role": "Head of Design",
+    "org": "Halden",
+    "facts": [
+     {
+      "label": "Last met",
+      "value": "Sep 30"
+     }
+    ]
+   }
+  },
+  "email": {
+   "group": "Agent & actions",
+   "purpose": "Draft email the user can edit and send (send always needs approval).",
+   "useWhen": "'Draft a reply', 'email them'.",
+   "streaming": "Subject first; body streams as phrases.",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "to": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "maxItems": 10,
+      "minItems": 1
+     },
+     "cc": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 200
+      },
+      "maxItems": 10
+     },
+     "subject": {
+      "type": "string",
+      "maxLength": 200
+     },
+     "body": {
+      "type": "string",
+      "maxLength": 8000
+     },
+     "state": {
+      "enum": [
+       "draft",
+       "sending",
+       "sent",
+       "error"
+      ]
+     }
+    },
+    "required": [
+     "to",
+     "subject",
+     "body"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "to": [
+     "mira@halden.com"
+    ],
+    "subject": "Re: renewal",
+    "body": "Hi Mira — Thursday works. I'll bring the SSO timeline.",
+    "state": "draft"
+   }
+  },
+  "approval": {
+   "group": "Agent & actions",
+   "purpose": "Ask before an action with side effects. Sets card status to needs-you.",
+   "useWhen": "Before sending, booking, paying, deleting, posting.",
+   "streaming": "Drops in with the needs-you sound; buttons are disabled for 400 ms to stop accidental taps.",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "action": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "title": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "detail": {
+      "type": "string",
+      "maxLength": 400
+     },
+     "risk": {
+      "enum": [
+       "low",
+       "medium",
+       "high"
+      ]
+     },
+     "choices": {
+      "type": "array",
+      "items": {
+       "enum": [
+        "allow-once",
+        "allow-always-this",
+        "edit",
+        "deny"
+       ]
+      },
+      "maxItems": 4,
+      "minItems": 1
+     },
+     "state": {
+      "enum": [
+       "pending",
+       "approved",
+       "denied",
+       "expired"
+      ]
+     }
+    },
+    "required": [
+     "action",
+     "title",
+     "choices"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "action": "email.send",
+    "title": "Send this reply to Mira?",
+    "risk": "medium",
+    "choices": [
+     "allow-once",
+     "edit",
+     "deny"
+    ],
+    "state": "pending"
+   }
+  },
+  "created": {
+   "group": "Agent & actions",
+   "purpose": "Receipt for something made (event, doc, file, reservation).",
+   "useWhen": "After an action succeeds.",
+   "streaming": "Pops with the 'sent' sound; shows Undo for 10 s if reversible.",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "kind": {
+      "type": "string",
+      "maxLength": 30
+     },
+     "title": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "detail": {
+      "type": "string",
+      "maxLength": 200
+     },
+     "href": {
+      "type": "string",
+      "maxLength": 500
+     },
+     "undoToken": {
+      "type": "string",
+      "maxLength": 80
+     }
+    },
+    "required": [
+     "kind",
+     "title"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "kind": "event",
+    "title": "Dinner, Sun 6:00 PM",
+    "detail": "Invites sent to 5 people",
+    "undoToken": "u_81f"
+   }
+  },
+  "connect": {
+   "group": "Agent & actions",
+   "purpose": "Ask the user to connect an account (OAuth).",
+   "useWhen": "A tool needs access the user hasn't granted.",
+   "streaming": "Static; state changes animate.",
+   "agentlyCore": true,
+   "props": {
+    "type": "object",
+    "properties": {
+     "provider": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "label": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "why": {
+      "type": "string",
+      "maxLength": 200
+     },
+     "state": {
+      "enum": [
+       "idle",
+       "connecting",
+       "connected",
+       "error"
+      ]
+     },
+     "error": {
+      "type": "string",
+      "maxLength": 200
+     }
+    },
+    "required": [
+     "provider",
+     "state"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "provider": "google-calendar",
+    "label": "Connect Google Calendar",
+    "why": "To find a free evening",
+    "state": "idle"
+   }
+  },
+  "error": {
+   "group": "Agent & actions",
+   "purpose": "A friendly failure with a fix or retry.",
+   "useWhen": "Tool failed, offline, timed out, invalid output after repair.",
+   "streaming": "Plays error sound once; card status becomes error.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "kind": {
+      "enum": [
+       "network",
+       "auth",
+       "permission",
+       "tool",
+       "rate-limit",
+       "timeout",
+       "invalid-output"
+      ]
+     },
+     "title": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "detail": {
+      "type": "string",
+      "maxLength": 400
+     },
+     "retry": {
+      "type": "boolean"
+     },
+     "fix": {
+      "type": "string",
+      "maxLength": 200
+     }
+    },
+    "required": [
+     "kind",
+     "title"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "kind": "timeout",
+    "title": "The flight search took too long",
+    "retry": true
+   }
+  },
+  "columns": {
+   "group": "Layout",
+   "purpose": "2–3 columns; children point here with parent + slot (0,1,2).",
+   "useWhen": "Image beside text, two short lists side by side. Collapses to one column under 520 px.",
+   "streaming": "Column frames appear at once; children stream into them.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "count": {
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 3
+     },
+     "ratio": {
+      "enum": [
+       "1:1",
+       "1:2",
+       "2:1",
+       "1:1:1"
+      ]
+     },
+     "gap": {
+      "enum": [
+       "s",
+       "m",
+       "l"
+      ]
+     }
+    },
+    "required": [
+     "count"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "count": 2,
+    "ratio": "1:2"
+   }
+  },
+  "section": {
+   "group": "Layout",
+   "purpose": "A titled group, optionally collapsible; children point here with parent.",
+   "useWhen": "Grouping related blocks in long answers.",
+   "streaming": "Title first; children stream in.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 100
+     },
+     "collapsible": {
+      "type": "boolean"
+     },
+     "collapsed": {
+      "type": "boolean"
+     },
+     "tone": {
+      "enum": [
+       "plain",
+       "card",
+       "tinted"
+      ]
+     }
+    },
+    "required": [],
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "The menu",
+    "tone": "card"
+   }
+  },
+  "app": {
+   "group": "Escape hatch",
+   "purpose": "A generated mini-tool (HTML+CSS+JS) that runs in a locked-down sandboxed iframe. See section 7.",
+   "useWhen": "Only when no mix of native components can do it: a game, a drawing pad, a sound toy, a bespoke simulator.",
+   "streaming": "Shows a 'Building…' frame at the declared height; mounts once the whole source has arrived and passed checks.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 60
+     },
+     "height": {
+      "type": "integer",
+      "minimum": 120,
+      "maximum": 900
+     },
+     "html": {
+      "type": "string",
+      "maxLength": 60000
+     },
+     "permissions": {
+      "type": "array",
+      "items": {
+       "enum": [
+        "audio",
+        "storage",
+        "clipboard-write",
+        "fullscreen"
+       ]
+      },
+      "maxItems": 4
+     },
+     "fallback": {
+      "type": "string",
+      "maxLength": 400
+     }
+    },
+    "required": [
+     "title",
+     "html",
+     "fallback"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Bill splitter",
+    "height": 360,
+    "html": "<div id=app>…</div><script>/* reads host.theme, calls host.resize() */</script>",
+    "permissions": [
+     "clipboard-write"
+    ],
+    "fallback": "Split $186 between 4 = $46.50 each (18% tip included)."
+   }
+  },
+  "alert": {
+   "group": "Notch",
+   "purpose": "A proactive alert that drops out of the notch (title + one line + up to 2 actions). Opens the island to the bar or open state.",
+   "useWhen": "Something needs the user without being asked: a renewal at risk, a meeting moved, research finished.",
+   "streaming": "Shape morphs first (arrival spring), then title, then detail 150 ms later; actions fade in last.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 60
+     },
+     "detail": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "status": {
+      "enum": [
+       "needs-you",
+       "info",
+       "good",
+       "warn",
+       "error"
+      ]
+     },
+     "source": {
+      "type": "string",
+      "maxLength": 60
+     },
+     "icon": {
+      "type": "string",
+      "maxLength": 30
+     },
+     "actions": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "kind": {
+         "enum": [
+          "send",
+          "open",
+          "copy",
+          "set",
+          "submit",
+          "approve",
+          "deny",
+          "run"
+         ]
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "text": {
+         "type": "string",
+         "maxLength": 500
+        },
+        "url": {
+         "type": "string",
+         "maxLength": 500,
+         "format": "uri"
+        },
+        "var": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "value": {
+         "type": [
+          "number",
+          "string",
+          "boolean"
+         ]
+        },
+        "style": {
+         "enum": [
+          "primary",
+          "secondary",
+          "ghost",
+          "danger"
+         ]
+        },
+        "icon": {
+         "type": "string",
+         "maxLength": 30
+        }
+       },
+       "required": [
+        "kind",
+        "label"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 2
+     },
+     "expiresIn": {
+      "type": "integer",
+      "minimum": 3,
+      "maximum": 3600
+     }
+    },
+    "required": [
+     "title",
+     "status"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Northwind may not renew",
+    "detail": "Renews in 9 days · their champion left",
+    "status": "needs-you",
+    "source": "CRM",
+    "actions": [
+     {
+      "kind": "send",
+      "label": "What happened?",
+      "text": "What happened with Northwind?"
+     }
+    ]
+   }
+  },
+  "glance": {
+   "group": "Notch",
+   "purpose": "A one-line read-out that lives inside the notch bar (icon, text, optional value).",
+   "useWhen": "Short status the user can read at a glance: 'Northwind · Needs you', 'Researching · 18 sources'.",
+   "streaming": "Crossfades in place (240 ms); never animates width more than once per 560 ms.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "text": {
+      "type": "string",
+      "maxLength": 60
+     },
+     "value": {
+      "oneOf": [
+       {
+        "type": "string",
+        "maxLength": 400
+       },
+       {
+        "type": "object",
+        "properties": {
+         "$ref": {
+          "type": "string",
+          "maxLength": 120
+         }
+        },
+        "required": [
+         "$ref"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "$calc": {
+          "type": "string",
+          "maxLength": 200
+         },
+         "format": {
+          "enum": [
+           "number",
+           "currency",
+           "percent",
+           "duration",
+           "text"
+          ]
+         }
+        },
+        "required": [
+         "$calc"
+        ],
+        "additionalProperties": false
+       }
+      ]
+     },
+     "icon": {
+      "type": "string",
+      "maxLength": 30
+     },
+     "tone": {
+      "enum": [
+       "neutral",
+       "accent",
+       "good",
+       "warn",
+       "bad"
+      ]
+     },
+     "progress": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     }
+    },
+    "required": [
+     "text"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "text": "Researching",
+    "value": "18 sources",
+    "icon": "orb",
+    "tone": "accent",
+    "progress": 0.45
+   }
+  },
+  "receipt": {
+   "group": "Notch",
+   "purpose": "The done-line shown in the bar after an action (≤ 80 chars), with optional Undo.",
+   "useWhen": "Right after a side effect succeeds or fails: 'Sent to Tomás · Thursday 10:00 held ✓'.",
+   "streaming": "Bar morphs to receipt width; check mark draws 300 ms; holds 3.2 s (6 s if failed), then the island returns to rest.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "text": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "ok": {
+      "type": "boolean"
+     },
+     "undoToken": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "holdMs": {
+      "type": "integer",
+      "minimum": 1000,
+      "maximum": 10000
+     }
+    },
+    "required": [
+     "text",
+     "ok"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "text": "Sent to Tomás · Thursday 10:00 held",
+    "ok": true,
+    "undoToken": "u_9c1"
+   }
+  },
+  "jobs": {
+   "group": "Notch",
+   "purpose": "Parallel background jobs: a count in the bar, up to 4 rows in the hover peek.",
+   "useWhen": "When 2+ agent jobs run at once (research, drafting, booking).",
+   "streaming": "Count ticks with the tick sound; rows 110 ms apart in the peek; finished jobs leave with exit.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "title": {
+         "type": "string",
+         "maxLength": 60
+        },
+        "state": {
+         "enum": [
+          "queued",
+          "running",
+          "needs-you",
+          "done",
+          "failed"
+         ]
+        },
+        "step": {
+         "type": "string",
+         "maxLength": 80
+        },
+        "progress": {
+         "type": "number",
+         "minimum": 0,
+         "maximum": 1
+        }
+       },
+       "required": [
+        "id",
+        "title",
+        "state"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 12,
+      "minItems": 1
+     }
+    },
+    "required": [
+     "items"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "items": [
+     {
+      "id": "j1",
+      "title": "Draft Northwind offer",
+      "state": "running",
+      "step": "Pricing at 12%"
+     },
+     {
+      "id": "j2",
+      "title": "Book Thursday 10:00",
+      "state": "done"
+     },
+     {
+      "id": "j3",
+      "title": "Brief Leo",
+      "state": "queued"
+     }
+    ]
+   }
+  },
+  "plan": {
+   "group": "Deep research",
+   "purpose": "The research plan: the question, numbered steps, scope, and an approve/edit window before work starts.",
+   "useWhen": "First block of every deep-research job. The user can edit steps or sources; auto-starts after a countdown.",
+   "streaming": "Steps appear 110 ms apart; the countdown ring runs once; on approval the card reshapes into the live canvas.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "question": {
+      "type": "string",
+      "maxLength": 400
+     },
+     "steps": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "title": {
+         "type": "string",
+         "maxLength": 120
+        },
+        "detail": {
+         "type": "string",
+         "maxLength": 240
+        },
+        "state": {
+         "enum": [
+          "pending",
+          "active",
+          "done",
+          "skipped",
+          "failed"
+         ]
+        }
+       },
+       "required": [
+        "id",
+        "title"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 12,
+      "minItems": 1
+     },
+     "include": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 120
+      },
+      "maxItems": 10
+     },
+     "exclude": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 120
+      },
+      "maxItems": 10
+     },
+     "depth": {
+      "enum": [
+       "quick",
+       "standard",
+       "deep"
+      ]
+     },
+     "autoStartIn": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 600
+     },
+     "state": {
+      "enum": [
+       "draft",
+       "approved",
+       "running",
+       "done"
+      ]
+     }
+    },
+    "required": [
+     "question",
+     "steps"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "question": "Which EU e-bike brands grew fastest in 2025–26?",
+    "depth": "standard",
+    "autoStartIn": 60,
+    "state": "draft",
+    "steps": [
+     {
+      "id": "p1",
+      "title": "List top 15 EU e-bike brands"
+     },
+     {
+      "id": "p2",
+      "title": "Collect 2025 and 2026 revenue or unit sales"
+     },
+     {
+      "id": "p3",
+      "title": "Check funding and press for growth signals"
+     },
+     {
+      "id": "p4",
+      "title": "Rank and explain"
+     }
+    ],
+    "exclude": [
+     "reddit.com"
+    ]
+   }
+  },
+  "research": {
+   "group": "Deep research",
+   "purpose": "Live status of a research job: stage, counters, current step, budget used.",
+   "useWhen": "Pinned at the top of the research canvas and mirrored in the notch bar.",
+   "streaming": "Counters roll (250 ms) as events arrive; stage chip crossfades; a thin progress bar eases with the reshape spring.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "stage": {
+      "enum": [
+       "planning",
+       "searching",
+       "reading",
+       "analyzing",
+       "writing",
+       "verifying",
+       "done",
+       "paused",
+       "failed"
+      ]
+     },
+     "step": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "progress": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     },
+     "counts": {
+      "type": "object",
+      "properties": {
+       "searches": {
+        "type": "integer",
+        "minimum": 0
+       },
+       "sources": {
+        "type": "integer",
+        "minimum": 0
+       },
+       "read": {
+        "type": "integer",
+        "minimum": 0
+       },
+       "findings": {
+        "type": "integer",
+        "minimum": 0
+       }
+      },
+      "required": [],
+      "additionalProperties": false
+     },
+     "elapsedS": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "budget": {
+      "type": "object",
+      "properties": {
+       "maxSearches": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "maxMinutes": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "spentUsd": {
+        "type": "number",
+        "minimum": 0
+       },
+       "maxUsd": {
+        "type": "number",
+        "minimum": 0
+       }
+      },
+      "required": [],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "stage"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "stage": "reading",
+    "step": "Reading VanMoof and Cowboy filings",
+    "progress": 0.42,
+    "counts": {
+     "searches": 23,
+     "sources": 61,
+     "read": 18,
+     "findings": 7
+    },
+    "elapsedS": 214,
+    "budget": {
+     "maxMinutes": 15,
+     "spentUsd": 0.31,
+     "maxUsd": 2
+    }
+   }
+  },
+  "sourcefeed": {
+   "group": "Deep research",
+   "purpose": "Sources as they are found and read (favicon, title, site, state, relevance).",
+   "useWhen": "During research, so the user sees what the agent is looking at; collapses to a count when done.",
+   "streaming": "New sources slide in at the top, 110 ms apart (max 3 per second); state dot changes found → reading → read/used/skipped.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "title": {
+         "type": "string",
+         "maxLength": 160
+        },
+        "url": {
+         "type": "string",
+         "maxLength": 500
+        },
+        "site": {
+         "type": "string",
+         "maxLength": 80
+        },
+        "state": {
+         "enum": [
+          "found",
+          "reading",
+          "read",
+          "used",
+          "skipped",
+          "blocked"
+         ]
+        },
+        "relevance": {
+         "type": "number",
+         "minimum": 0,
+         "maximum": 1
+        },
+        "why": {
+         "type": "string",
+         "maxLength": 160
+        },
+        "trust": {
+         "enum": [
+          "first-party",
+          "external",
+          "untrusted"
+         ]
+        }
+       },
+       "required": [
+        "id",
+        "title",
+        "state"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 60,
+      "minItems": 1
+     },
+     "show": {
+      "type": "integer",
+      "minimum": 3,
+      "maximum": 60
+     }
+    },
+    "required": [
+     "items"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "show": 8,
+    "items": [
+     {
+      "id": "s1",
+      "title": "European e-bike market report 2026",
+      "site": "conebi.eu",
+      "state": "used",
+      "relevance": 0.92
+     },
+     {
+      "id": "s2",
+      "title": "Cowboy raises new round",
+      "site": "techcrunch.com",
+      "state": "reading",
+      "relevance": 0.71
+     }
+    ]
+   }
+  },
+  "finding": {
+   "group": "Deep research",
+   "purpose": "One claim the research supports, with confidence and citation chips.",
+   "useWhen": "Key findings as they are established; later merged into the report.",
+   "streaming": "Pops in with the arrival spring; citation chips appear 60 ms apart; 'disputed' findings get a warn edge.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "claim": {
+      "type": "string",
+      "maxLength": 240
+     },
+     "detail": {
+      "type": "string",
+      "maxLength": 600
+     },
+     "confidence": {
+      "enum": [
+       "low",
+       "medium",
+       "high"
+      ]
+     },
+     "cites": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 30
+      },
+      "maxItems": 8,
+      "minItems": 1
+     },
+     "contradicts": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 30
+      },
+      "maxItems": 8
+     },
+     "status": {
+      "enum": [
+       "new",
+       "confirmed",
+       "disputed",
+       "retracted"
+      ]
+     }
+    },
+    "required": [
+     "claim",
+     "cites"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "claim": "Cowboy's 2025 unit sales grew about 40% year on year",
+    "confidence": "medium",
+    "cites": [
+     "s2",
+     "s7"
+    ],
+    "status": "confirmed"
+   }
+  },
+  "evidence": {
+   "group": "Deep research",
+   "purpose": "A table of data extracted from sources, with a citation on every row (and optionally every cell).",
+   "useWhen": "Numbers pulled from many sources: prices, revenues, specs, dates. Feeds charts and comparisons by $ref.",
+   "streaming": "Rows draw in as they are extracted (110 ms); cells with conflicting sources show a small warning dot.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "string",
+      "maxLength": 30
+     },
+     "caption": {
+      "type": "string",
+      "maxLength": 120
+     },
+     "columns": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "key": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "format": {
+         "enum": [
+          "text",
+          "number",
+          "currency",
+          "percent",
+          "date"
+         ]
+        },
+        "unit": {
+         "type": "string",
+         "maxLength": 12
+        }
+       },
+       "required": [
+        "key",
+        "label"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 10,
+      "minItems": 1
+     },
+     "rows": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "cells": {
+         "type": "object",
+         "additionalProperties": {
+          "type": [
+           "string",
+           "number",
+           "null"
+          ]
+         }
+        },
+        "cite": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "maxLength": 30
+         },
+         "maxItems": 6,
+         "minItems": 1
+        },
+        "cellCites": {
+         "type": "object",
+         "additionalProperties": {
+          "type": "array",
+          "items": {
+           "type": "string",
+           "maxLength": 30
+          },
+          "maxItems": 4
+         }
+        },
+        "conflict": {
+         "type": "boolean"
+        }
+       },
+       "required": [
+        "cells",
+        "cite"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 200,
+      "minItems": 1
+     }
+    },
+    "required": [
+     "columns",
+     "rows"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "id": "ev1",
+    "caption": "E-bike brands, 2025",
+    "columns": [
+     {
+      "key": "brand",
+      "label": "Brand"
+     },
+     {
+      "key": "units",
+      "label": "Units",
+      "format": "number"
+     },
+     {
+      "key": "growth",
+      "label": "YoY",
+      "format": "percent"
+     }
+    ],
+    "rows": [
+     {
+      "cells": {
+       "brand": "Cowboy",
+       "units": 42000,
+       "growth": 0.4
+      },
+      "cite": [
+       "s2",
+       "s7"
+      ]
+     },
+     {
+      "cells": {
+       "brand": "VanMoof",
+       "units": 31000,
+       "growth": -0.1
+      },
+      "cite": [
+       "s4"
+      ],
+      "conflict": true
+     }
+    ]
+   }
+  },
+  "outline": {
+   "group": "Deep research",
+   "purpose": "The report's table of contents with each section's writing state.",
+   "useWhen": "While the report is being written, and as navigation in the final report.",
+   "streaming": "Sections tick from pending → writing (shimmer) → done; clicking scrolls to the section.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "sections": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "title": {
+         "type": "string",
+         "maxLength": 100
+        },
+        "state": {
+         "enum": [
+          "pending",
+          "writing",
+          "done"
+         ]
+        }
+       },
+       "required": [
+        "id",
+        "title"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 20,
+      "minItems": 1
+     }
+    },
+    "required": [
+     "sections"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "sections": [
+     {
+      "id": "r1",
+      "title": "Summary",
+      "state": "done"
+     },
+     {
+      "id": "r2",
+      "title": "Growth leaders",
+      "state": "writing"
+     },
+     {
+      "id": "r3",
+      "title": "Methods and caveats",
+      "state": "pending"
+     }
+    ]
+   }
+  },
+  "filters": {
+   "group": "Deep research",
+   "purpose": "Facets that filter or sort other blocks locally (tables, evidence, comparison, chart, gallery, map).",
+   "useWhen": "Final interactive reports with more than ~10 rows or several categories.",
+   "streaming": "Appears with the report; changing a facet re-filters targets in one frame (rows leave with exit, enter with the row reveal).",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "targets": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 30
+      },
+      "maxItems": 6,
+      "minItems": 1
+     },
+     "facets": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "key": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "kind": {
+         "enum": [
+          "select",
+          "multiselect",
+          "range",
+          "toggle",
+          "search"
+         ]
+        },
+        "options": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "maxLength": 60
+         },
+         "maxItems": 20
+        },
+        "min": {
+         "type": "number"
+        },
+        "max": {
+         "type": "number"
+        }
+       },
+       "required": [
+        "key",
+        "label",
+        "kind"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 6,
+      "minItems": 1
+     },
+     "sort": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "key": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        }
+       },
+       "required": [
+        "key",
+        "label"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 6
+     }
+    },
+    "required": [
+     "targets",
+     "facets"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "targets": [
+     "ev1",
+     "b9"
+    ],
+    "facets": [
+     {
+      "key": "country",
+      "label": "Country",
+      "kind": "multiselect",
+      "options": [
+       "NL",
+       "BE",
+       "DE",
+       "FR"
+      ]
+     },
+     {
+      "key": "growth",
+      "label": "Min growth",
+      "kind": "range",
+      "min": -0.5,
+      "max": 1
+     }
+    ],
+    "sort": [
+     {
+      "key": "growth",
+      "label": "Growth"
+     }
+    ]
+   }
+  },
+  "taskplan": {
+   "group": "Parallel tasks",
+   "purpose": "A proposed split of a big goal into parallel agent jobs, with what each job may touch, approved once as a batch.",
+   "useWhen": "When one request becomes 3+ jobs ('we launch tomorrow, here are 100 issues').",
+   "streaming": "Groups appear 110 ms apart; the side-effect summary appears last; the approve button is enabled only when the summary has arrived.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "goal": {
+      "type": "string",
+      "maxLength": 200
+     },
+     "jobs": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "title": {
+         "type": "string",
+         "maxLength": 80
+        },
+        "app": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "count": {
+         "type": "integer",
+         "minimum": 1,
+         "maximum": 500
+        },
+        "effects": {
+         "type": "array",
+         "items": {
+          "enum": [
+           "read",
+           "draft",
+           "write",
+           "send",
+           "post",
+           "spend",
+           "delete"
+          ]
+         },
+         "maxItems": 7
+        },
+        "needsApproval": {
+         "type": "boolean"
+        }
+       },
+       "required": [
+        "id",
+        "title"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 30,
+      "minItems": 1
+     },
+     "concurrency": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 32
+     },
+     "deadline": {
+      "type": "string",
+      "maxLength": 60
+     },
+     "summary": {
+      "type": "string",
+      "maxLength": 240
+     }
+    },
+    "required": [
+     "goal",
+     "jobs"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "goal": "Launch tomorrow: 100 open issues",
+    "concurrency": 8,
+    "deadline": "Wed Oct 14, 9:00 AM",
+    "jobs": [
+     {
+      "id": "j1",
+      "title": "Product Hunt listing",
+      "app": "Product Hunt",
+      "effects": [
+       "write"
+      ]
+     },
+     {
+      "id": "j2",
+      "title": "Close launch bugs",
+      "app": "Linear",
+      "count": 12,
+      "effects": [
+       "write"
+      ]
+     },
+     {
+      "id": "j8",
+      "title": "Investor emails",
+      "app": "Gmail",
+      "count": 34,
+      "effects": [
+       "draft",
+       "send"
+      ],
+      "needsApproval": true
+     }
+    ],
+    "summary": "8 jobs cover 100 issues. 2 jobs send or post publicly; you'll approve those before they go out."
+   }
+  },
+  "taskgrid": {
+   "group": "Parallel tasks",
+   "purpose": "Live list or grid of parallel jobs: icon, title, current step, status chip; finished jobs expand into a one-line result card.",
+   "useWhen": "While 2+ jobs run. Pinned beside the work (a rail) or as a full grid.",
+   "streaming": "Rows enter 80–110 ms apart; status chips crossfade; a finishing row expands with the reshape spring into a result card; older results compact back to a checked row.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 60
+     },
+     "layout": {
+      "enum": [
+       "rail",
+       "grid"
+      ]
+     },
+     "expandRecent": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 6
+     },
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "title": {
+         "type": "string",
+         "maxLength": 80
+        },
+        "app": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "icon": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "step": {
+         "type": "string",
+         "maxLength": 120
+        },
+        "state": {
+         "enum": [
+          "queued",
+          "working",
+          "needs-you",
+          "ready",
+          "error",
+          "canceled"
+         ]
+        },
+        "progress": {
+         "type": "number",
+         "minimum": 0,
+         "maximum": 1
+        },
+        "result": {
+         "type": "object",
+         "properties": {
+          "headline": {
+           "type": "string",
+           "maxLength": 80
+          },
+          "detail": {
+           "type": "string",
+           "maxLength": 160
+          },
+          "via": {
+           "enum": [
+            "api",
+            "on-your-mac",
+            "browser",
+            "computer-use"
+           ]
+          }
+         },
+         "required": [
+          "headline"
+         ],
+         "additionalProperties": false
+        },
+        "ref": {
+         "type": "string",
+         "maxLength": 40
+        }
+       },
+       "required": [
+        "id",
+        "title",
+        "state"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 200,
+      "minItems": 1
+     }
+    },
+    "required": [
+     "items"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Agents",
+    "layout": "rail",
+    "expandRecent": 3,
+    "items": [
+     {
+      "id": "j1",
+      "title": "Product Hunt listing",
+      "app": "Product Hunt",
+      "state": "ready",
+      "result": {
+       "headline": "Scheduled · Wed 12:01 AM PT",
+       "detail": "Tagline from your pitch deck.",
+       "via": "api"
+      }
+     },
+     {
+      "id": "j5",
+      "title": "Launch coupon",
+      "app": "Stripe",
+      "state": "working",
+      "step": "Setting up LAUNCH30…"
+     }
+    ]
+   }
+  },
+  "goalbar": {
+   "group": "Company brain",
+   "purpose": "A slim bar naming the goal and the few numbers the brain found that matter for it (e.g. 47 asked · 31 customers · 52% of revenue · 2 promised).",
+   "useWhen": "Top of a brain-driven answer or plan, before any action. 2–5 metrics.",
+   "streaming": "Bar drops in (arrival spring); each metric ticks in as it is established, counting up over 750 ms, in step with the voice.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "goal": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "metrics": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "value": {
+         "oneOf": [
+          {
+           "type": "number"
+          },
+          {
+           "type": "string",
+           "maxLength": 40
+          },
+          {
+           "type": "object",
+           "properties": {
+            "$calc": {
+             "type": "string",
+             "maxLength": 200
+            },
+            "format": {
+             "enum": [
+              "number",
+              "currency",
+              "percent",
+              "duration"
+             ]
+            }
+           },
+           "required": [
+            "$calc"
+           ],
+           "additionalProperties": false
+          },
+          {
+           "type": "object",
+           "properties": {
+            "$ref": {
+             "type": "string",
+             "maxLength": 120
+            }
+           },
+           "required": [
+            "$ref"
+           ],
+           "additionalProperties": false
+          }
+         ]
+        },
+        "format": {
+         "enum": [
+          "number",
+          "percent",
+          "currency"
+         ]
+        },
+        "state": {
+         "enum": [
+          "pending",
+          "counting",
+          "done"
+         ]
+        },
+        "tone": {
+         "enum": [
+          "neutral",
+          "accent",
+          "warn"
+         ]
+        },
+        "cites": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "maxLength": 40
+         },
+         "maxItems": 12
+        }
+       },
+       "required": [
+        "id",
+        "label"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 5,
+      "minItems": 1
+     }
+    },
+    "required": [
+     "goal",
+     "metrics"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "goal": "Launch the app Monday",
+    "metrics": [
+     {
+      "id": "m1",
+      "label": "asked",
+      "value": 47,
+      "state": "done",
+      "cites": [
+       "q1",
+       "q2"
+      ]
+     },
+     {
+      "id": "m2",
+      "label": "customers",
+      "value": 31,
+      "state": "done"
+     },
+     {
+      "id": "m3",
+      "label": "of revenue",
+      "value": 0.52,
+      "format": "percent",
+      "state": "counting"
+     },
+     {
+      "id": "m4",
+      "label": "promised",
+      "value": 2,
+      "tone": "warn",
+      "state": "pending"
+     }
+    ]
+   }
+  },
+  "quote": {
+   "group": "Company brain",
+   "purpose": "A sourced quote callout: what someone said, where and when, with an optional tag (Promised, Asked, Complaint).",
+   "useWhen": "Evidence in their own words. Max 3 per answer; each must point at a real source record.",
+   "streaming": "Pops in next to its subject with the arrival spring; the source line fades in 150 ms after the quote.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "text": {
+      "type": "string",
+      "maxLength": 240
+     },
+     "who": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "org": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "app": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "kind": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "date": {
+      "type": "string",
+      "maxLength": 30
+     },
+     "tag": {
+      "type": "string",
+      "maxLength": 30
+     },
+     "tone": {
+      "enum": [
+       "neutral",
+       "warn",
+       "good"
+      ]
+     },
+     "ref": {
+      "type": "string",
+      "maxLength": 60
+     }
+    },
+    "required": [
+     "text",
+     "app",
+     "ref"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "text": "Early access is yours. Promise.",
+    "who": "Support",
+    "org": "Orbit",
+    "app": "Intercom",
+    "kind": "support reply",
+    "date": "Sep 30",
+    "tag": "Promised",
+    "tone": "warn",
+    "ref": "intercom:conv/8812"
+   }
+  },
+  "provenance": {
+   "group": "Company brain",
+   "purpose": "A small 'why I know this' label: the fact, how many times and where it was seen, and when.",
+   "useWhen": "Attach to a field, a row or a draft sentence the agent filled from the brain (target = block id, optional field).",
+   "streaming": "Appears on hover or for ~2 s when the agent fills the field; never animates on its own afterwards.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "target": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "field": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "label": {
+      "type": "string",
+      "maxLength": 30
+     },
+     "text": {
+      "type": "string",
+      "maxLength": 160
+     },
+     "count": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "apps": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 40
+      },
+      "maxItems": 6
+     },
+     "dates": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 30
+      },
+      "maxItems": 6
+     },
+     "refs": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 60
+      },
+      "maxItems": 12
+     }
+    },
+    "required": [
+     "target",
+     "text"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "target": "b4",
+    "field": "body",
+    "label": "BRAIN",
+    "text": "Jennifer Park asked 3 times",
+    "count": 3,
+    "apps": [
+     "Gmail",
+     "Slack",
+     "Zoom"
+    ],
+    "dates": [
+     "Mar 3",
+     "Jun 13",
+     "Sep 8"
+    ]
+   }
+  },
+  "graph": {
+   "group": "Company brain",
+   "purpose": "The brain as a graph: app sources (with counts) and entities linked by edges, with up to 3 highlighted paths.",
+   "useWhen": "Rarely: when the user asks how something was found, or as a 2–4 s 'looking' moment for a big goal. Never required to understand the answer.",
+   "streaming": "Nodes fade in by source, edges draw 300 ms each, highlighted path glows; collapses to the goalbar.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "nodes": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 60
+        },
+        "kind": {
+         "enum": [
+          "app",
+          "person",
+          "company",
+          "deal",
+          "doc",
+          "event"
+         ]
+        },
+        "count": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "app": {
+         "type": "string",
+         "maxLength": 40
+        }
+       },
+       "required": [
+        "id",
+        "label",
+        "kind"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 60,
+      "minItems": 1
+     },
+     "edges": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "from": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "to": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        }
+       },
+       "required": [
+        "from",
+        "to"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 120
+     },
+     "highlight": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "items": {
+        "type": "string",
+        "maxLength": 40
+       },
+       "maxItems": 8,
+       "minItems": 2
+      },
+      "maxItems": 3
+     }
+    },
+    "required": [
+     "nodes"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "nodes": [
+     {
+      "id": "slack",
+      "label": "Slack",
+      "kind": "app",
+      "count": "41,800 messages"
+     },
+     {
+      "id": "orbit",
+      "label": "Orbit",
+      "kind": "company"
+     },
+     {
+      "id": "jp",
+      "label": "Jennifer Park",
+      "kind": "person"
+     }
+    ],
+    "edges": [
+     {
+      "from": "slack",
+      "to": "jp"
+     },
+     {
+      "from": "jp",
+      "to": "orbit"
+     }
+    ],
+    "highlight": [
+     [
+      "slack",
+      "jp",
+      "orbit"
+     ]
+    ]
+   }
+  },
+  "interrupt": {
+   "group": "Proactive & onboarding",
+   "purpose": "A proactive banner the agent raises on its own: headline, impact chips, a risk pill, evidence rows with citations, one suggested action.",
+   "useWhen": "Only from the proactive engine, only above the interruption threshold, and only at a task boundary. Never in a normal reply.",
+   "streaming": "Shell drops from the top (≈ 0.7 s after the spoken cue), fills 400 ms later; evidence rows arrive in step with the voice; the action button comes last. Accepting turns it into agent tasks.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "chips": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 40
+      },
+      "maxItems": 4
+     },
+     "risk": {
+      "enum": [
+       "info",
+       "at-risk",
+       "urgent"
+      ]
+     },
+     "rows": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "icon": {
+         "type": "string",
+         "maxLength": 30
+        },
+        "text": {
+         "type": "string",
+         "maxLength": 100
+        },
+        "detail": {
+         "type": "string",
+         "maxLength": 120
+        },
+        "date": {
+         "type": "string",
+         "maxLength": 20
+        },
+        "cites": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "maxLength": 60
+         },
+         "maxItems": 6
+        }
+       },
+       "required": [
+        "text"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 5
+     },
+     "signals": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "action": {
+      "type": "object",
+      "properties": {
+       "kind": {
+        "enum": [
+         "send",
+         "open",
+         "copy",
+         "set",
+         "submit",
+         "approve",
+         "deny",
+         "run"
+        ]
+       },
+       "label": {
+        "type": "string",
+        "maxLength": 40
+       },
+       "text": {
+        "type": "string",
+        "maxLength": 500
+       },
+       "url": {
+        "type": "string",
+        "maxLength": 500,
+        "format": "uri"
+       },
+       "var": {
+        "type": "string",
+        "maxLength": 40
+       },
+       "value": {
+        "type": [
+         "number",
+         "string",
+         "boolean"
+        ]
+       },
+       "style": {
+        "enum": [
+         "primary",
+         "secondary",
+         "ghost",
+         "danger"
+        ]
+       },
+       "icon": {
+        "type": "string",
+        "maxLength": 30
+       }
+      },
+      "required": [
+       "kind",
+       "label"
+      ],
+      "additionalProperties": false
+     },
+     "say": {
+      "type": "string",
+      "maxLength": 60
+     },
+     "state": {
+      "enum": [
+       "shell",
+       "filled",
+       "accepted",
+       "snoozed",
+       "dismissed"
+      ]
+     }
+    },
+    "required": [
+     "title",
+     "risk"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "title": "Lumen Health is about to churn",
+    "chips": [
+     "$64K a year",
+     "Renews Nov 12"
+    ],
+    "risk": "at-risk",
+    "signals": 4,
+    "state": "filled",
+    "rows": [
+     {
+      "icon": "intercom",
+      "text": "Support tickets up 3×",
+      "detail": "This month, 4 still open",
+      "date": "Oct 6"
+     },
+     {
+      "icon": "stripe",
+      "text": "Dropped 18 seats",
+      "detail": "From 40 to 22",
+      "date": "Oct 3"
+     },
+     {
+      "icon": "linkedin",
+      "text": "Priya, their champion, changed jobs",
+      "date": "Oct 2"
+     }
+    ],
+    "action": {
+     "kind": "send",
+     "label": "Run the save plan",
+     "text": "Save the Lumen Health account"
+    },
+    "say": "save the account"
+   }
+  },
+  "connectors": {
+   "group": "Proactive & onboarding",
+   "purpose": "Onboarding connector cards: one per tool the user named, each with its scopes and live state; connected tools dock into the assistant pill.",
+   "useWhen": "Setup by voice or text ('Gmail, Slack, HubSpot and Stripe'), or when a request needs a tool that isn't connected (use 'connect' for a single one).",
+   "streaming": "A card pops in as each tool name is heard (about 0.5 s apart); states change in place; on success the cards fly into the pill and leave a CONNECTED icon row.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "provider": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "label": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "scopes": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "maxLength": 60
+         },
+         "maxItems": 6
+        },
+        "personal": {
+         "type": "boolean"
+        },
+        "state": {
+         "enum": [
+          "idle",
+          "authorizing",
+          "syncing",
+          "connected",
+          "failed"
+         ]
+        },
+        "detail": {
+         "type": "string",
+         "maxLength": 80
+        }
+       },
+       "required": [
+        "provider",
+        "state"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 12,
+      "minItems": 1
+     },
+     "hint": {
+      "type": "string",
+      "maxLength": 60
+     }
+    },
+    "required": [
+     "items"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "hint": "Say “connect them”",
+    "items": [
+     {
+      "provider": "gmail",
+      "label": "Gmail",
+      "scopes": [
+       "Read mail",
+       "Create drafts"
+      ],
+      "personal": true,
+      "state": "connected",
+      "detail": "Reading 2,140 threads"
+     },
+     {
+      "provider": "slack",
+      "label": "Slack",
+      "state": "authorizing"
+     },
+     {
+      "provider": "hubspot",
+      "label": "HubSpot",
+      "state": "idle"
+     },
+     {
+      "provider": "stripe",
+      "label": "Stripe",
+      "state": "idle"
+     }
+    ]
+   }
+  },
+  "timeback": {
+   "group": "Proactive & onboarding",
+   "purpose": "A small counter of time the agent saved today, with a breakdown on hover.",
+   "useWhen": "Pinned near the assistant pill during a burst of tasks. Estimates only; label them as such.",
+   "streaming": "Counts up (250 ms roll) each time a task resolves; never counts down.",
+   "agentlyCore": false,
+   "props": {
+    "type": "object",
+    "properties": {
+     "label": {
+      "type": "string",
+      "maxLength": 30
+     },
+     "minutes": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "estimate": {
+      "type": "boolean"
+     },
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "task": {
+         "type": "string",
+         "maxLength": 60
+        },
+        "minutes": {
+         "type": "integer",
+         "minimum": 0
+        }
+       },
+       "required": [
+        "task",
+        "minutes"
+       ],
+       "additionalProperties": false
+      },
+      "maxItems": 30
+     }
+    },
+    "required": [
+     "minutes"
+    ],
+    "additionalProperties": false
+   },
+   "example": {
+    "label": "Time back today",
+    "minutes": 155,
+    "estimate": true,
+    "items": [
+     {
+      "task": "Board deck",
+      "minutes": 90
+     },
+     {
+      "task": "Two customer replies",
+      "minutes": 20
+     }
+    ]
+   }
+  }
+ }
+}

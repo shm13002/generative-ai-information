@@ -1,0 +1,17 @@
+{
+  "id": "card-email",
+  "utterance": "example email",
+  "status": "ready",
+  "screen": {
+    "title": "Email",
+    "blocks": [
+      {
+        "id": "e1",
+        "type": "email",
+        "to": "Tomás Rivera",
+        "subject": "Two-year renewal",
+        "body": "Hi Tomás, thanks for your note. For a two-year renewal we can do 12% off, so $31,680 a year. Happy to walk through it Thursday. Best, Sam"
+      }
+    ]
+  }
+}

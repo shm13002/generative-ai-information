@@ -1,0 +1,32 @@
+{
+  "id": "card-person",
+  "utterance": "example person",
+  "status": "ready",
+  "screen": {
+    "title": "Person",
+    "blocks": [
+      {
+        "id": "p1",
+        "type": "person",
+        "name": "Tomás Rivera",
+        "role": "CFO",
+        "org": "Northwind",
+        "note": "Joined in July. You've never met.",
+        "facts": [
+          {
+            "l": "Before",
+            "v": "Finance at Stripe"
+          },
+          {
+            "l": "Decides",
+            "v": "This renewal"
+          },
+          {
+            "l": "You've met",
+            "v": "Never"
+          }
+        ]
+      }
+    ]
+  }
+}

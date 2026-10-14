@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StageAction",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "const": "dismiss"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "const": "open"
+        },
+        "blockId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,100}$"
+        },
+        "itemId": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "kind",
+        "blockId"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "connect",
+            "send",
+            "approve",
+            "decline",
+            "ask"
+          ]
+        },
+        "blockId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,100}$"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "kind",
+        "blockId",
+        "itemId"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "reply",
+            "done",
+            "primary"
+          ]
+        },
+        "blockId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,100}$"
+        },
+        "itemId": {
+          "type": "string",
+          "maxLength": 200
+        }
+      }
+    }
+  ]
+}

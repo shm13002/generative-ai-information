@@ -1,0 +1,15 @@
+/* Motion presets (re-implementation). Text only fades; shapes move. */
+@import url('tokens.css');
+.m-arrive{animation:m-arrive var(--arrive-ms) var(--spring-arrive) both}
+@keyframes m-arrive{from{opacity:0;transform:translateY(-8px) scale(.96)}to{opacity:1;transform:none}}
+.m-fade{animation:m-fade var(--reveal-ms) var(--ease-out) both}
+@keyframes m-fade{from{opacity:0}to{opacity:1}}
+.m-grow{animation:m-grow 520ms var(--ease-out) both;transform-origin:top}
+@keyframes m-grow{from{transform:scaleY(0)}to{transform:none}}
+.m-draw{animation:m-draw 380ms var(--ease-out) both;transform-origin:left}
+@keyframes m-draw{from{transform:scaleX(0)}to{transform:none}}
+.m-ghost{animation:m-ghost 160ms var(--ease-in) forwards}
+@keyframes m-ghost{to{opacity:0}}
+.m-spin{animation:m-spin .9s linear infinite}@keyframes m-spin{to{transform:rotate(360deg)}}
+.m-pulse{animation:m-pulse 1.4s ease-in-out infinite}@keyframes m-pulse{50%{opacity:.3}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

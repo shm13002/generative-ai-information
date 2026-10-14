@@ -1,0 +1,9 @@
+{
+  "_comment": "Example .mcp.json for Claude Code (project scope). 'shadcn' is the server RareUI's own docs point to (lib/mcp.ts); add the @rare-ui registry in components.json (see README). Package names verified on npm 2026-10-13: shadcn 4.21.4, @21st-dev/magic 0.2.3, @magicuidesign/mcp 2.0.0. The 21st.dev API_KEY env var name follows its README convention and is UNVERIFIED here; Magic UI MCP needs no key (unverified).",
+  "mcpServers": {
+    "shadcn": { "command": "npx", "args": ["shadcn@latest", "mcp"] },
+    "magicui": { "command": "npx", "args": ["-y", "@magicuidesign/mcp@latest"] },
+    "21st-magic": { "command": "npx", "args": ["-y", "@21st-dev/magic@latest"], "env": { "API_KEY": "<your 21st.dev key>" } },
+    "playwright": { "command": "npx", "args": ["-y", "@playwright/mcp@latest"] }
+  }
+}

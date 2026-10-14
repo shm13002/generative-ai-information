@@ -1,0 +1,22 @@
+{
+  "name": "brim-baseline",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Brim (placeholder name): original voice-first notch assistant baseline with a generative card kit",
+  "type": "module",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/",
+    "typecheck": "tsc -p tsconfig.json",
+    "build": "npm run typecheck && node scripts/build.js && node scripts/bundle.js",
+    "screens": "node scripts/screens.js",
+    "smoke": "node scripts/smoke-electron.js",
+    "record": "node scripts/record-demo.js",
+    "serve": "node scripts/serve.js"
+  },
+  "license": "UNLICENSED",
+  "dependencies": { "ajv": "^8.17.1" },
+  "devDependencies": { "electron": "^33.2.0", "typescript": "^5.6.3", "playwright-core": "^1.48.0" },
+  "optionalDependencies": { "@anthropic-ai/claude-agent-sdk": "*" }
+}

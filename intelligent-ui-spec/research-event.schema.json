@@ -1,0 +1,481 @@
+{
+ "title": "Research job events (orchestrator → app, one JSON object per line, append-only log)",
+ "oneOf": [
+  {
+   "type": "object",
+   "properties": {
+    "ev": {
+     "const": "job"
+    },
+    "job": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "seq": {
+     "type": "integer"
+    },
+    "state": {
+     "enum": [
+      "created",
+      "planning",
+      "awaiting-approval",
+      "running",
+      "paused",
+      "writing",
+      "done",
+      "failed",
+      "canceled"
+     ]
+    },
+    "question": {
+     "type": "string",
+     "maxLength": 400
+    }
+   },
+   "required": [
+    "ev",
+    "job",
+    "seq",
+    "state"
+   ],
+   "additionalProperties": false
+  },
+  {
+   "type": "object",
+   "properties": {
+    "ev": {
+     "const": "plan"
+    },
+    "job": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "seq": {
+     "type": "integer"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "maxLength": 30
+       },
+       "title": {
+        "type": "string",
+        "maxLength": 120
+       }
+      },
+      "required": [
+       "id",
+       "title"
+      ],
+      "additionalProperties": false
+     },
+     "maxItems": 12,
+     "minItems": 1
+    },
+    "autoStartIn": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "required": [
+    "ev",
+    "job",
+    "seq",
+    "steps"
+   ],
+   "additionalProperties": false
+  },
+  {
+   "type": "object",
+   "properties": {
+    "ev": {
+     "const": "step"
+    },
+    "job": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "seq": {
+     "type": "integer"
+    },
+    "id": {
+     "type": "string",
+     "maxLength": 30
+    },
+    "state": {
+     "enum": [
+      "active",
+      "done",
+      "skipped",
+      "failed"
+     ]
+    },
+    "note": {
+     "type": "string",
+     "maxLength": 160
+    }
+   },
+   "required": [
+    "ev",
+    "job",
+    "seq",
+    "id",
+    "state"
+   ],
+   "additionalProperties": false
+  },
+  {
+   "type": "object",
+   "properties": {
+    "ev": {
+     "const": "search"
+    },
+    "job": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "seq": {
+     "type": "integer"
+    },
+    "worker": {
+     "type": "string",
+     "maxLength": 30
+    },
+    "query": {
+     "type": "string",
+     "maxLength": 300
+    },
+    "results": {
+     "type": "integer",
+     "minimum": 0
+    }
+   },
+   "required": [
+    "ev",
+    "job",
+    "seq",
+    "query"
+   ],
+   "additionalProperties": false
+  },
+  {
+   "type": "object",
+   "properties": {
+    "ev": {
+     "const": "source"
+    },
+    "job": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "seq": {
+     "type": "integer"
+    },
+    "id": {
+     "type": "string",
+     "maxLength": 30
+    },
+    "url": {
+     "type": "string",
+     "maxLength": 500
+    },
+    "title": {
+     "type": "string",
+     "maxLength": 160
+    },
+    "site": {
+     "type": "string",
+     "maxLength": 80
+    },
+    "state": {
+     "enum": [
+      "found",
+      "reading",
+      "read",
+      "used",
+      "skipped",
+      "blocked"
+     ]
+    },
+    "relevance": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   },
+   "required": [
+    "ev",
+    "job",
+    "seq",
+    "id",
+    "state"
+   ],
+   "additionalProperties": false
+  },
+  {
+   "type": "object",
+   "properties": {
+    "ev": {
+     "const": "finding"
+    },
+    "job": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "seq": {
+     "type": "integer"
+    },
+    "id": {
+     "type": "string",
+     "maxLength": 30
+    },
+    "claim": {
+     "type": "string",
+     "maxLength": 240
+    },
+    "cites": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "maxLength": 30
+     },
+     "maxItems": 8,
+     "minItems": 1
+    },
+    "confidence": {
+     "enum": [
+      "low",
+      "medium",
+      "high"
+     ]
+    },
+    "status": {
+     "enum": [
+      "new",
+      "confirmed",
+      "disputed",
+      "retracted"
+     ]
+    }
+   },
+   "required": [
+    "ev",
+    "job",
+    "seq",
+    "id",
+    "claim",
+    "cites"
+   ],
+   "additionalProperties": false
+  },
+  {
+   "type": "object",
+   "properties": {
+    "ev": {
+     "const": "data"
+    },
+    "job": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "seq": {
+     "type": "integer"
+    },
+    "table": {
+     "type": "string",
+     "maxLength": 30
+    },
+    "row": {
+     "type": "object"
+    },
+    "cite": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "maxLength": 30
+     },
+     "maxItems": 6,
+     "minItems": 1
+    }
+   },
+   "required": [
+    "ev",
+    "job",
+    "seq",
+    "table",
+    "row",
+    "cite"
+   ],
+   "additionalProperties": false
+  },
+  {
+   "type": "object",
+   "properties": {
+    "ev": {
+     "const": "progress"
+    },
+    "job": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "seq": {
+     "type": "integer"
+    },
+    "stage": {
+     "enum": [
+      "planning",
+      "searching",
+      "reading",
+      "analyzing",
+      "writing",
+      "verifying"
+     ]
+    },
+    "progress": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "spentUsd": {
+     "type": "number",
+     "minimum": 0
+    }
+   },
+   "required": [
+    "ev",
+    "job",
+    "seq",
+    "stage"
+   ],
+   "additionalProperties": false
+  },
+  {
+   "type": "object",
+   "properties": {
+    "ev": {
+     "const": "checkpoint"
+    },
+    "job": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "seq": {
+     "type": "integer"
+    },
+    "step": {
+     "type": "string",
+     "maxLength": 30
+    },
+    "state": {
+     "type": "string",
+     "maxLength": 200
+    }
+   },
+   "required": [
+    "ev",
+    "job",
+    "seq",
+    "state"
+   ],
+   "additionalProperties": false
+  },
+  {
+   "type": "object",
+   "properties": {
+    "ev": {
+     "const": "report"
+    },
+    "job": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "seq": {
+     "type": "integer"
+    },
+    "line": {
+     "type": "object"
+    }
+   },
+   "required": [
+    "ev",
+    "job",
+    "seq",
+    "line"
+   ],
+   "additionalProperties": false
+  },
+  {
+   "type": "object",
+   "properties": {
+    "ev": {
+     "const": "needs"
+    },
+    "job": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "seq": {
+     "type": "integer"
+    },
+    "kind": {
+     "enum": [
+      "plan-approval",
+      "login",
+      "paywall",
+      "clarify",
+      "budget"
+     ]
+    },
+    "text": {
+     "type": "string",
+     "maxLength": 240
+    }
+   },
+   "required": [
+    "ev",
+    "job",
+    "seq",
+    "kind",
+    "text"
+   ],
+   "additionalProperties": false
+  },
+  {
+   "type": "object",
+   "properties": {
+    "ev": {
+     "const": "error"
+    },
+    "job": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "seq": {
+     "type": "integer"
+    },
+    "code": {
+     "type": "string",
+     "maxLength": 40
+    },
+    "retryable": {
+     "type": "boolean"
+    },
+    "text": {
+     "type": "string",
+     "maxLength": 240
+    }
+   },
+   "required": [
+    "ev",
+    "job",
+    "seq",
+    "code"
+   ],
+   "additionalProperties": false
+  }
+ ]
+}

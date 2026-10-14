@@ -1,0 +1,8 @@
+{"t":"card","id":"c50","title":"Launch the app Monday","status":"working","mode":"full","say":"Forty-seven people asked for it. Thirty-one customers. Half your revenue."}
+{"t":"block","id":"gb1","type":"goalbar","props":{"goal":"Launch the app Monday","metrics":[{"id":"m1","label":"asked","value":47,"state":"done"},{"id":"m2","label":"customers","value":31,"state":"done"},{"id":"m3","label":"of revenue","value":0.52,"format":"percent","state":"done"},{"id":"m4","label":"promised","value":2,"tone":"warn","state":"done"}]}}
+{"t":"block","id":"q1","type":"quote","props":{"text":"Early access is yours. Promise.","org":"Orbit","app":"Intercom","kind":"support reply","date":"Sep 30","tag":"Promised","tone":"warn","ref":"intercom:conv/8812"}}
+{"t":"block","id":"q2","type":"quote","props":{"text":"You'll get the app first.","org":"Halcyon","app":"HubSpot","kind":"deal note","date":"Sep 14","tag":"Promised","tone":"warn","ref":"hubspot:note/5521"}}
+{"t":"block","id":"tp1","type":"taskplan","props":{"goal":"Launch the app Monday","jobs":[{"id":"j1","title":"Early access for Halcyon and Orbit","app":"Gmail","effects":["send"],"needsApproval":true},{"id":"j2","title":"Write to all 31 customers, in their own words","app":"Gmail","count":31,"effects":["draft","send"],"needsApproval":true},{"id":"j3","title":"Reopen deals lost over 'no mobile app'","app":"HubSpot","count":4,"effects":["write"]},{"id":"j4","title":"Launch email and X post","app":"Mailchimp","effects":["draft","post"],"needsApproval":true}],"summary":"Sends and posts are scheduled for Monday 9:00 AM and wait for your OK."}}
+{"t":"block","id":"bt1","type":"buttons","props":{"items":[{"kind":"send","label":"Handle it","text":"Okay, handle it"}]}}
+{"t":"status","status":"needs-you"}
+{"t":"end"}

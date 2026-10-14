@@ -1,0 +1,13 @@
+/* Brim tokens — original palette: graphite + ember amber. Not derived from any vendor's brand. */
+:root{
+  --b-ink:#0a0b0d; --b-surface:#131518; --b-raised:#1a1d21; --b-sunk:#0f1113;
+  --b-tx:#f3f1ec; --b-tx2:#cbc7bd; --b-tx3:#8c887e; --b-tx4:#5f5c55;
+  --b-accent:#f2b04a; --b-accent2:#ff7a59; --b-ok:#5cc8a6; --b-warn:#f2c94c; --b-fail:#ef6f5e;
+  --b-fill:rgba(255,248,235,.055); --b-fill2:rgba(255,248,235,.09); --b-fill3:rgba(255,248,235,.15); --b-line:rgba(255,248,235,.08);
+  --b-font:"Inter","SF Pro Text",-apple-system,"Segoe UI",system-ui,sans-serif; --b-mono:ui-monospace,"JetBrains Mono",Menlo,monospace;
+  --b-r-rest:14px; --b-r-bar:22px; --b-r-open:26px; --b-wing:40px; --b-bar-w:420px; --b-open-w:460px; --b-notch-w:190px; --b-notch-h:32px;
+  --b-ease:cubic-bezier(.33,0,.15,1); --b-out:cubic-bezier(.16,.84,.3,1); --b-in:cubic-bezier(.55,0,.8,.2);
+}
+@media (prefers-contrast: more){:root{--b-tx2:#e6e2d8;--b-tx3:#b8b3a7;--b-line:rgba(255,255,255,.22);--b-fill:rgba(255,255,255,.1)}}
+:root[data-theme=light] #brim[data-display=floating]{--b-ink:#fbfaf7;--b-surface:#fff;--b-raised:#f3f1ec;--b-tx:#16150f;--b-tx2:#3c3a33;--b-tx3:#6d6a60;--b-tx4:#9c988c;
+  --b-fill:rgba(20,18,10,.05);--b-fill2:rgba(20,18,10,.08);--b-fill3:rgba(20,18,10,.14);--b-line:rgba(20,18,10,.1);--b-accent:#c9811b}
